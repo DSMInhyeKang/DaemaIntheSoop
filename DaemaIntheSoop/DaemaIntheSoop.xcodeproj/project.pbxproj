@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F92E6A8285AD15F00FCB5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6A7285AD15F00FCB5EC /* AppDelegate.swift */; };
+		3F92E6AA285AD15F00FCB5EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */; };
+		3F92E6AC285AD15F00FCB5EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6AB285AD15F00FCB5EC /* ViewController.swift */; };
+		3F92E6AF285AD15F00FCB5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6AD285AD15F00FCB5EC /* Main.storyboard */; };
+		3F92E6B2285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6B0285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld */; };
+		3F92E6B4285AD16000FCB5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6B3285AD16000FCB5EC /* Assets.xcassets */; };
+		3F92E6B7285AD16000FCB5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6B5285AD16000FCB5EC /* LaunchScreen.storyboard */; };
+		3F92E6BF285AD9C900FCB5EC /* StretchPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6BE285AD9C900FCB5EC /* StretchPro.otf */; };
+		3F92E6C2285ADECA00FCB5EC /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C1285ADECA00FCB5EC /* SF-Pro.ttf */; };
+		3F92E6C4285ADF4400FCB5EC /* NewYork.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C3285ADF4400FCB5EC /* NewYork.ttf */; };
+		3F92E6CA285ADF6C00FCB5EC /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C5285ADF6B00FCB5EC /* SpoqaHanSansNeo-Regular.otf */; };
+		3F92E6CB285ADF6C00FCB5EC /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C6285ADF6B00FCB5EC /* SpoqaHanSansNeo-Medium.otf */; };
+		3F92E6CC285ADF6C00FCB5EC /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C7285ADF6B00FCB5EC /* SpoqaHanSansNeo-Light.otf */; };
+		3F92E6CD285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C8285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf */; };
+		3F92E6CE285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C9285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf */; };
+		3F92E6D2285B1FD500FCB5EC /* Daema; In the Soop.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */; };
+		3F92E6D5285B33F800FCB5EC /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D4285B33F800FCB5EC /* LogInVC.swift */; };
+		3F92E6D7285B353200FCB5EC /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D6285B353200FCB5EC /* NewUserVC.swift */; };
+		3F92E6D9285B38C000FCB5EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D8285B38C000FCB5EC /* MainVC.swift */; };
+		3F92E6DB285B3FF700FCB5EC /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6DA285B3FF700FCB5EC /* TabBarVC.swift */; };
+		3F92E6DE285B43EA00FCB5EC /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6DD285B43EA00FCB5EC /* NewPostVC.swift */; };
+		3F92E6E0285B43F800FCB5EC /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */; };
+		4BCDF654BCA071C5C4C82EE6 /* Pods_DaemaIntheSoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB830F4274AC196D52F5980F /* Pods_DaemaIntheSoop.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		213A93BDD08EAF1CCF47B787 /* Pods-DaemaIntheSoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaemaIntheSoop.release.xcconfig"; path = "Target Support Files/Pods-DaemaIntheSoop/Pods-DaemaIntheSoop.release.xcconfig"; sourceTree = "<group>"; };
+		3F92E6A4285AD15F00FCB5EC /* DaemaIntheSoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaemaIntheSoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F92E6A7285AD15F00FCB5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3F92E6AB285AD15F00FCB5EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F92E6AE285AD15F00FCB5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F92E6B1285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DaemaIntheSoop.xcdatamodel; sourceTree = "<group>"; };
+		3F92E6B3285AD16000FCB5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F92E6B6285AD16000FCB5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F92E6B8285AD16000FCB5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F92E6BE285AD9C900FCB5EC /* StretchPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StretchPro.otf; sourceTree = "<group>"; };
+		3F92E6C1285ADECA00FCB5EC /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		3F92E6C3285ADF4400FCB5EC /* NewYork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYork.ttf; sourceTree = "<group>"; };
+		3F92E6C5285ADF6B00FCB5EC /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
+		3F92E6C6285ADF6B00FCB5EC /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
+		3F92E6C7285ADF6B00FCB5EC /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
+		3F92E6C8285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
+		3F92E6C9285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
+		3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Daema; In the Soop.jpeg"; sourceTree = "<group>"; };
+		3F92E6D4285B33F800FCB5EC /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		3F92E6D6285B353200FCB5EC /* NewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
+		3F92E6D8285B38C000FCB5EC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		3F92E6DA285B3FF700FCB5EC /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		3F92E6DD285B43EA00FCB5EC /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		86F85ADEA88BC67084519BFC /* Pods-DaemaIntheSoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaemaIntheSoop.debug.xcconfig"; path = "Target Support Files/Pods-DaemaIntheSoop/Pods-DaemaIntheSoop.debug.xcconfig"; sourceTree = "<group>"; };
+		AB830F4274AC196D52F5980F /* Pods_DaemaIntheSoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaemaIntheSoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F92E6A1285AD15F00FCB5EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BCDF654BCA071C5C4C82EE6 /* Pods_DaemaIntheSoop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F92E69B285AD15F00FCB5EC = {
+			isa = PBXGroup;
+			children = (
+				3F92E6A6285AD15F00FCB5EC /* DaemaIntheSoop */,
+				3F92E6A5285AD15F00FCB5EC /* Products */,
+				9CD06482F90FBED1F7995333 /* Pods */,
+				CB84C8D5B085B213E3B07B38 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F92E6A5285AD15F00FCB5EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F92E6A4285AD15F00FCB5EC /* DaemaIntheSoop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F92E6A6285AD15F00FCB5EC /* DaemaIntheSoop */ = {
+			isa = PBXGroup;
+			children = (
+				3F92E6D3285B302700FCB5EC /* VC */,
+				3F92E6DC285B43A300FCB5EC /* TabBarVC */,
+				3F92E6A7285AD15F00FCB5EC /* AppDelegate.swift */,
+				3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */,
+				3F92E6AD285AD15F00FCB5EC /* Main.storyboard */,
+				3F92E6B3285AD16000FCB5EC /* Assets.xcassets */,
+				3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */,
+				3F92E6B5285AD16000FCB5EC /* LaunchScreen.storyboard */,
+				3F92E6C0285ADD6E00FCB5EC /* Font */,
+				3F92E6B8285AD16000FCB5EC /* Info.plist */,
+				3F92E6B0285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld */,
+			);
+			path = DaemaIntheSoop;
+			sourceTree = "<group>";
+		};
+		3F92E6C0285ADD6E00FCB5EC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				3F92E6C1285ADECA00FCB5EC /* SF-Pro.ttf */,
+				3F92E6C3285ADF4400FCB5EC /* NewYork.ttf */,
+				3F92E6BE285AD9C900FCB5EC /* StretchPro.otf */,
+				3F92E6C9285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf */,
+				3F92E6C7285ADF6B00FCB5EC /* SpoqaHanSansNeo-Light.otf */,
+				3F92E6C6285ADF6B00FCB5EC /* SpoqaHanSansNeo-Medium.otf */,
+				3F92E6C5285ADF6B00FCB5EC /* SpoqaHanSansNeo-Regular.otf */,
+				3F92E6C8285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		3F92E6D3285B302700FCB5EC /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				3F92E6AB285AD15F00FCB5EC /* ViewController.swift */,
+				3F92E6D4285B33F800FCB5EC /* LogInVC.swift */,
+				3F92E6D6285B353200FCB5EC /* NewUserVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		3F92E6DC285B43A300FCB5EC /* TabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				3F92E6D8285B38C000FCB5EC /* MainVC.swift */,
+				3F92E6DA285B3FF700FCB5EC /* TabBarVC.swift */,
+				3F92E6DD285B43EA00FCB5EC /* NewPostVC.swift */,
+				3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */,
+			);
+			path = TabBarVC;
+			sourceTree = "<group>";
+		};
+		9CD06482F90FBED1F7995333 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F85ADEA88BC67084519BFC /* Pods-DaemaIntheSoop.debug.xcconfig */,
+				213A93BDD08EAF1CCF47B787 /* Pods-DaemaIntheSoop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB84C8D5B085B213E3B07B38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB830F4274AC196D52F5980F /* Pods_DaemaIntheSoop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F92E6A3285AD15F00FCB5EC /* DaemaIntheSoop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F92E6BB285AD16000FCB5EC /* Build configuration list for PBXNativeTarget "DaemaIntheSoop" */;
+			buildPhases = (
+				87BA45644F1057520B33EDA1 /* [CP] Check Pods Manifest.lock */,
+				3F92E6A0285AD15F00FCB5EC /* Sources */,
+				3F92E6A1285AD15F00FCB5EC /* Frameworks */,
+				3F92E6A2285AD15F00FCB5EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaemaIntheSoop;
+			productName = DaemaIntheSoop;
+			productReference = 3F92E6A4285AD15F00FCB5EC /* DaemaIntheSoop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F92E69C285AD15F00FCB5EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					3F92E6A3285AD15F00FCB5EC = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 3F92E69F285AD15F00FCB5EC /* Build configuration list for PBXProject "DaemaIntheSoop" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F92E69B285AD15F00FCB5EC;
+			productRefGroup = 3F92E6A5285AD15F00FCB5EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F92E6A3285AD15F00FCB5EC /* DaemaIntheSoop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F92E6A2285AD15F00FCB5EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F92E6C4285ADF4400FCB5EC /* NewYork.ttf in Resources */,
+				3F92E6CD285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf in Resources */,
+				3F92E6CC285ADF6C00FCB5EC /* SpoqaHanSansNeo-Light.otf in Resources */,
+				3F92E6CB285ADF6C00FCB5EC /* SpoqaHanSansNeo-Medium.otf in Resources */,
+				3F92E6B7285AD16000FCB5EC /* LaunchScreen.storyboard in Resources */,
+				3F92E6B4285AD16000FCB5EC /* Assets.xcassets in Resources */,
+				3F92E6CA285ADF6C00FCB5EC /* SpoqaHanSansNeo-Regular.otf in Resources */,
+				3F92E6AF285AD15F00FCB5EC /* Main.storyboard in Resources */,
+				3F92E6BF285AD9C900FCB5EC /* StretchPro.otf in Resources */,
+				3F92E6C2285ADECA00FCB5EC /* SF-Pro.ttf in Resources */,
+				3F92E6CE285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf in Resources */,
+				3F92E6D2285B1FD500FCB5EC /* Daema; In the Soop.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87BA45644F1057520B33EDA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DaemaIntheSoop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F92E6A0285AD15F00FCB5EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F92E6B2285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld in Sources */,
+				3F92E6DE285B43EA00FCB5EC /* NewPostVC.swift in Sources */,
+				3F92E6AC285AD15F00FCB5EC /* ViewController.swift in Sources */,
+				3F92E6A8285AD15F00FCB5EC /* AppDelegate.swift in Sources */,
+				3F92E6D5285B33F800FCB5EC /* LogInVC.swift in Sources */,
+				3F92E6D7285B353200FCB5EC /* NewUserVC.swift in Sources */,
+				3F92E6AA285AD15F00FCB5EC /* SceneDelegate.swift in Sources */,
+				3F92E6E0285B43F800FCB5EC /* MyPageVC.swift in Sources */,
+				3F92E6DB285B3FF700FCB5EC /* TabBarVC.swift in Sources */,
+				3F92E6D9285B38C000FCB5EC /* MainVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F92E6AD285AD15F00FCB5EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F92E6AE285AD15F00FCB5EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F92E6B5285AD16000FCB5EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F92E6B6285AD16000FCB5EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F92E6B9285AD16000FCB5EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F92E6BA285AD16000FCB5EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F92E6BC285AD16000FCB5EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F85ADEA88BC67084519BFC /* Pods-DaemaIntheSoop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8B7L582Q4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaemaIntheSoop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InHyeKang.DaemaIntheSoop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F92E6BD285AD16000FCB5EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 213A93BDD08EAF1CCF47B787 /* Pods-DaemaIntheSoop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8B7L582Q4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaemaIntheSoop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InHyeKang.DaemaIntheSoop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F92E69F285AD15F00FCB5EC /* Build configuration list for PBXProject "DaemaIntheSoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F92E6B9285AD16000FCB5EC /* Debug */,
+				3F92E6BA285AD16000FCB5EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F92E6BB285AD16000FCB5EC /* Build configuration list for PBXNativeTarget "DaemaIntheSoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F92E6BC285AD16000FCB5EC /* Debug */,
+				3F92E6BD285AD16000FCB5EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F92E6B0285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F92E6B1285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodel */,
+			);
+			currentVersion = 3F92E6B1285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodel */;
+			path = DaemaIntheSoop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3F92E69C285AD15F00FCB5EC /* Project object */;
+}
