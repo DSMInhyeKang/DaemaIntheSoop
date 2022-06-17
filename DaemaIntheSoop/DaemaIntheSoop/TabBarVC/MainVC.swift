@@ -64,8 +64,8 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postListCell", for: indexPath) as! PostListCell
-        cell.lbUser.text = "\(result[indexPath.row].content)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! PostListCell
+        cell.lbUser.text = "\(result[indexPath.row].username)"
         cell.lbTitle.text = "\(result[indexPath.row].title)"
         return cell
     }

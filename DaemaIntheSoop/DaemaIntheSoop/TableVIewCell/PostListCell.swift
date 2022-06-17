@@ -11,6 +11,7 @@ class PostListCell: UITableViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbUser: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

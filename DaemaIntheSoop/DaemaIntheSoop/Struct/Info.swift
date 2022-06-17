@@ -9,6 +9,7 @@ import Foundation
 
 struct resultsArr: Codable {
     var id: Int
+    var username: String
     var title: String
     var content: String
 }

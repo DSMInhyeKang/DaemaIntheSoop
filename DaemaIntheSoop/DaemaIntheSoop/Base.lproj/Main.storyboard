@@ -9,6 +9,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="SF-Pro.ttf">
+            <string>SFPro-Bold</string>
             <string>SFPro-Regular</string>
         </array>
         <array key="SpoqaHanSansNeo-Bold.otf">
@@ -178,10 +179,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-wI-yma">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="listTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-wI-yma">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DZS-tk-FKv" detailTextLabel="4ET-ty-td9" style="IBUITableViewCellStyleSubtitle" id="PSx-Mn-VJZ" customClass="PostListCell" customModule="DaemaIntheSoop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="DZS-tk-FKv" detailTextLabel="4ET-ty-td9" style="IBUITableViewCellStyleSubtitle" id="PSx-Mn-VJZ" customClass="PostListCell" customModule="DaemaIntheSoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="49.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSx-Mn-VJZ" id="ygL-GH-and">
@@ -207,6 +208,7 @@
                                         <connections>
                                             <outlet property="lbTitle" destination="DZS-tk-FKv" id="afQ-lr-Yv7"/>
                                             <outlet property="lbUser" destination="4ET-ty-td9" id="nyi-3n-MY6"/>
+                                            <segue destination="LCv-uI-ce7" kind="show" id="X8n-kv-NqX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -223,12 +225,67 @@
                     </view>
                     <navigationItem key="navigationItem" title="대덕소프트웨어마이스터고등학교" id="35x-v5-hPS"/>
                     <connections>
-                        <outlet property="listTableView" destination="6RX-wI-yma" id="WaG-6T-AE3"/>
+                        <outlet property="listTableView" destination="6RX-wI-yma" id="7BO-4j-sgA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5v3-hW-Zph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3322" y="-1116"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="yXi-EF-ibx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1F-md-ZTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="LCv-uI-ce7" customClass="DetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="evi-tj-MIt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbPostTitle" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ld-5m-GbV">
+                                <rect key="frame" x="40" y="118" width="344" height="30"/>
+                                <fontDescription key="fontDescription" name="SFPro-Bold" family="SF Pro" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbPostWriter" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-wX-iJr">
+                                <rect key="frame" x="40" y="148" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="txtViewContent" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Khw-0M-rMn">
+                                <rect key="frame" x="50" y="198" width="314" height="515"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7mG-6a-dr2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eer-wX-iJr" firstAttribute="top" secondItem="0Ld-5m-GbV" secondAttribute="bottom" id="0Rn-eV-Y0W"/>
+                            <constraint firstItem="Eer-wX-iJr" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="40" id="4Ff-iq-e4n"/>
+                            <constraint firstItem="Khw-0M-rMn" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="50" id="8tD-dy-JRr"/>
+                            <constraint firstItem="Khw-0M-rMn" firstAttribute="top" secondItem="0Ld-5m-GbV" secondAttribute="bottom" constant="50" id="DX3-Fh-wQo"/>
+                            <constraint firstItem="0Ld-5m-GbV" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="40" id="HkH-zH-UAH"/>
+                            <constraint firstItem="7mG-6a-dr2" firstAttribute="bottom" secondItem="Khw-0M-rMn" secondAttribute="bottom" constant="100" id="LAO-PY-ObP"/>
+                            <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="0Ld-5m-GbV" secondAttribute="trailing" constant="30" id="XvG-eY-Tt3"/>
+                            <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="Khw-0M-rMn" secondAttribute="trailing" constant="50" id="cHI-Wj-vG4"/>
+                            <constraint firstItem="0Ld-5m-GbV" firstAttribute="top" secondItem="7mG-6a-dr2" secondAttribute="top" constant="30" id="hlm-bh-t1v"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F9E-AF-OW5"/>
+                    <connections>
+                        <outlet property="lbPostTitle" destination="0Ld-5m-GbV" id="lWJ-Vf-NVo"/>
+                        <outlet property="lbPostWriter" destination="Eer-wX-iJr" id="FYL-0P-7kf"/>
+                        <outlet property="lbUser" destination="Eer-wX-iJr" id="7qS-1H-ODI"/>
+                        <outlet property="txtViewContent" destination="Khw-0M-rMn" id="N69-Am-Bhx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4194" y="-1116"/>
         </scene>
         <!--Main-->
         <scene sceneID="3OB-AE-tSb">
