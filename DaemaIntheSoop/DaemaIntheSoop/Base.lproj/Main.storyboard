@@ -22,7 +22,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LaunchScreenVC" id="BYZ-38-t0r" customClass="ViewController" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -64,6 +63,7 @@
                         <outlet property="lbAppTitle" destination="c5T-MZ-o63" id="Sdb-tQ-Zzd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="95"/>
         </scene>
@@ -170,17 +170,54 @@
             </objects>
             <point key="canvasLocation" x="863.768115942029" y="93.75"/>
         </scene>
-        <!--MainVC-->
+        <!--대덕소프트웨어마이스터고등학교-->
         <scene sceneID="gI4-0J-16b">
             <objects>
                 <viewController storyboardIdentifier="MainVC" id="xNW-W0-1CZ" customClass="MainVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Pv-uL-ndp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-wI-yma">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DZS-tk-FKv" detailTextLabel="4ET-ty-td9" style="IBUITableViewCellStyleSubtitle" id="PSx-Mn-VJZ" customClass="PostListCell" customModule="DaemaIntheSoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="49.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSx-Mn-VJZ" id="ygL-GH-and">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DZS-tk-FKv">
+                                                    <rect key="frame" x="20" y="7.5" width="30" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ET-ty-td9">
+                                                    <rect key="frame" x="20" y="27" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QWY-Rt-Jpw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QWY-Rt-Jpw" firstAttribute="bottom" secondItem="6RX-wI-yma" secondAttribute="bottom" id="Vw8-ZA-nOq"/>
+                            <constraint firstItem="6RX-wI-yma" firstAttribute="top" secondItem="QWY-Rt-Jpw" secondAttribute="top" id="at5-cv-FWN"/>
+                            <constraint firstItem="QWY-Rt-Jpw" firstAttribute="trailing" secondItem="6RX-wI-yma" secondAttribute="trailing" id="rgh-i1-7OX"/>
+                            <constraint firstItem="6RX-wI-yma" firstAttribute="leading" secondItem="QWY-Rt-Jpw" secondAttribute="leading" id="vt8-16-cwV"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="35x-v5-hPS"/>
+                    <navigationItem key="navigationItem" title="대덕소프트웨어마이스터고등학교" id="35x-v5-hPS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5v3-hW-Zph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
