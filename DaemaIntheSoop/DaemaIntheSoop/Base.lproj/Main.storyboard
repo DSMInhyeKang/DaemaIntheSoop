@@ -181,7 +181,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-wI-yma">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DZS-tk-FKv" detailTextLabel="4ET-ty-td9" style="IBUITableViewCellStyleSubtitle" id="PSx-Mn-VJZ" customClass="PostListCell" customModule="DaemaIntheSoop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DZS-tk-FKv" detailTextLabel="4ET-ty-td9" style="IBUITableViewCellStyleSubtitle" id="PSx-Mn-VJZ" customClass="PostListCell" customModule="DaemaIntheSoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="49.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSx-Mn-VJZ" id="ygL-GH-and">
@@ -204,6 +204,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbTitle" destination="DZS-tk-FKv" id="afQ-lr-Yv7"/>
+                                            <outlet property="lbUser" destination="4ET-ty-td9" id="nyi-3n-MY6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -218,6 +222,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="대덕소프트웨어마이스터고등학교" id="35x-v5-hPS"/>
+                    <connections>
+                        <outlet property="listTableView" destination="6RX-wI-yma" id="WaG-6T-AE3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5v3-hW-Zph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
