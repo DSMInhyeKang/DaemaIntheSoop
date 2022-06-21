@@ -235,7 +235,6 @@
         <!--DetailVC-->
         <scene sceneID="yXi-EF-ibx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X1F-md-ZTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="LCv-uI-ce7" customClass="DetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="evi-tj-MIt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -284,6 +283,7 @@
                         <outlet property="txtViewContent" destination="Khw-0M-rMn" id="N69-Am-Bhx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1F-md-ZTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4194" y="-1116"/>
         </scene>
