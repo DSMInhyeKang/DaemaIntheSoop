@@ -26,9 +26,10 @@ class MainVC: UIViewController {
     private func getUsers() {
         AF.request("http://35.216.6.254:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
-            .responseDecodable(of: [resultsArr].self) {
+            .responseDecodable(of: [MainPostModel].self) {
                 response in switch response.result {
                 case.success:
+                    print(response.result)
                     if let data = try? JSONDecoder().decode([resultsArr].self, from: response.data!){
                         print(data)
                         DispatchQueue.main.async {

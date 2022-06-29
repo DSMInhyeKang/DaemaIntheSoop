@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewPostVC: UIViewController {
-
+    @IBOutlet weak var txtFieldNewTitle: UITextField!
+    @IBOutlet weak var txtViewNewContent: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnSendPost(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
