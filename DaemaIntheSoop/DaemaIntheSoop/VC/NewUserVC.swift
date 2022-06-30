@@ -86,13 +86,13 @@ class NewUserVC: UIViewController {
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 
                 successOnAlert.addAction(onAction)
-                present(successOnAlert, animated: true, completion: nil)
+                self.present(successOnAlert, animated: true, completion: nil)
             case .failure(let error):
                 let failOnAlert = UIAlertController(title: "안내", message: "이미 존재하는 사용자입니다.", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 
                 failOnAlert.addAction(onAction)
-                present(failOnAlert, animated: true, completion: nil)
+                self.present(failOnAlert, animated: true, completion: nil)
             }
         }
     }
