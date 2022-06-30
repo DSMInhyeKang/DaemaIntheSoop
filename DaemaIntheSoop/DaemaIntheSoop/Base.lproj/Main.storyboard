@@ -381,17 +381,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADz-kt-OkC">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="txtFieldName" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADz-kt-OkC">
                                 <rect key="frame" x="55" y="181.5" width="304" height="34"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3X-xq-eUS">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="txtFieldUsername" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3X-xq-eUS">
                                 <rect key="frame" x="55" y="245.5" width="209" height="34"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-2t-Wtg">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="txtFieldPW" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-2t-Wtg">
                                 <rect key="frame" x="55" y="319.5" width="304" height="34"/>
                                 <fontDescription key="fontDescription" name="SFPro-Regular" family="SF Pro" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -402,7 +402,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-gE-kbI">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnCheckUser" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-gE-kbI">
                                 <rect key="frame" x="269" y="245.5" width="90" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="4vX-Xo-xiJ"/>
@@ -421,11 +421,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnNewUser" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-80-KhX">
+                                <rect key="frame" x="30" y="430.5" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kyb-FY-K6P"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="회원가입">
+                                            <attributes>
+                                                <font key="NSFont" size="25" name="AppleSDGothicNeo-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="tXC-Zr-BRE"/>
+                                    <action selector="btnNewUser:" destination="HWx-QU-GqH" eventType="touchUpInside" id="Am7-vm-GOT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lgP-Ib-7F9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ul1-Hc-Xjb" firstAttribute="top" secondItem="lgP-Ib-7F9" secondAttribute="top" constant="25" id="0RA-sm-JHf"/>
+                            <constraint firstItem="pcN-80-KhX" firstAttribute="leading" secondItem="lgP-Ib-7F9" secondAttribute="leading" constant="30" id="1bo-0A-k3k"/>
                             <constraint firstItem="W3X-xq-eUS" firstAttribute="top" secondItem="ADz-kt-OkC" secondAttribute="bottom" constant="30" id="8nc-ga-XI5"/>
                             <constraint firstItem="eN4-gE-kbI" firstAttribute="top" secondItem="ADz-kt-OkC" secondAttribute="bottom" constant="30" id="9V4-n0-Nzh"/>
                             <constraint firstItem="ADz-kt-OkC" firstAttribute="leading" secondItem="lgP-Ib-7F9" secondAttribute="leading" constant="55" id="GAl-a2-dNG"/>
@@ -439,6 +462,8 @@
                             <constraint firstItem="1wc-2t-Wtg" firstAttribute="top" secondItem="W3X-xq-eUS" secondAttribute="bottom" constant="40" id="Tzf-Tw-QkQ"/>
                             <constraint firstItem="a9t-IB-yEh" firstAttribute="top" secondItem="W3X-xq-eUS" secondAttribute="bottom" constant="5" id="WKM-N9-Zrj"/>
                             <constraint firstItem="lgP-Ib-7F9" firstAttribute="trailing" secondItem="tfz-Hq-dIx" secondAttribute="trailing" constant="45" id="XJy-EQ-hDE"/>
+                            <constraint firstItem="pcN-80-KhX" firstAttribute="top" secondItem="tfz-Hq-dIx" secondAttribute="bottom" constant="50" id="Y33-uH-s5C"/>
+                            <constraint firstItem="lgP-Ib-7F9" firstAttribute="trailing" secondItem="pcN-80-KhX" secondAttribute="trailing" constant="30" id="Z5g-8j-dZS"/>
                             <constraint firstItem="lgP-Ib-7F9" firstAttribute="trailing" secondItem="ADz-kt-OkC" secondAttribute="trailing" constant="55" id="bCH-YG-gCD"/>
                             <constraint firstItem="lgP-Ib-7F9" firstAttribute="trailing" secondItem="a9t-IB-yEh" secondAttribute="trailing" constant="200" id="cQW-aS-Cb8"/>
                             <constraint firstItem="1wc-2t-Wtg" firstAttribute="leading" secondItem="lgP-Ib-7F9" secondAttribute="leading" constant="55" id="fl7-Sa-qbC"/>
