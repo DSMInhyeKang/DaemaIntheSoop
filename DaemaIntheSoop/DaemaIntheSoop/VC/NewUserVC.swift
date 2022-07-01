@@ -14,11 +14,9 @@ class NewUserVC: UIViewController {
     @IBOutlet weak var txtFieldPW: UITextField!
     @IBOutlet weak var lbUserState: UILabel!
     
-    
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -65,11 +63,11 @@ class NewUserVC: UIViewController {
         request.timeoutInterval = 10
         
         // POST 로 보낼 정보
-        let params = [
-            "username": "txtFieldUsername",
-            "name": "txtFieldName",
-            "password": "txtFieldPW"
-        ] as Dictionary
+        let params: Parameters = [
+            "username": txtFieldUsername.text,
+            "name": txtFieldName.text,
+            "password": txtFieldPW.text
+        ]
 
         // httpBody 에 parameters 추가
         do {
@@ -87,6 +85,7 @@ class NewUserVC: UIViewController {
                 
                 successOnAlert.addAction(onAction)
                 self.present(successOnAlert, animated: true, completion: nil)
+                
             case .failure(let error):
                 let failOnAlert = UIAlertController(title: "안내", message: "이미 존재하는 사용자입니다.", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
@@ -95,6 +94,8 @@ class NewUserVC: UIViewController {
                 self.present(failOnAlert, animated: true, completion: nil)
             }
         }
+        
+        
     }
     
     

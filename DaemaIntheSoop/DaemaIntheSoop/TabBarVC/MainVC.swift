@@ -12,7 +12,7 @@ class MainVC: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
     
-    var result: [resultsArr] = []
+    var result: [Content] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,14 @@ class MainVC: UIViewController {
     private func getUsers() {
         AF.request("http://35.216.6.254:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
-            .responseDecodable(of: [MainPostModel].self) {
+            .responseData {
                 response in switch response.result {
                 case.success:
                     print(response.result)
-                    if let data = try? JSONDecoder().decode([resultsArr].self, from: response.data!){
+                    if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
                         print(data)
                         DispatchQueue.main.async {
-                            self.result = data
+                            self.result = data.content
                             self.listTableView.reloadData()
                         }
                     }
