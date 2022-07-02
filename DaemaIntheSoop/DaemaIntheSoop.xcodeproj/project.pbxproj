@@ -22,7 +22,6 @@
 		3F92E6CC285ADF6C00FCB5EC /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C7285ADF6B00FCB5EC /* SpoqaHanSansNeo-Light.otf */; };
 		3F92E6CD285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C8285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf */; };
 		3F92E6CE285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6C9285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf */; };
-		3F92E6D2285B1FD500FCB5EC /* Daema; In the Soop.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */; };
 		3F92E6D5285B33F800FCB5EC /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D4285B33F800FCB5EC /* LogInVC.swift */; };
 		3F92E6D7285B353200FCB5EC /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D6285B353200FCB5EC /* NewUserVC.swift */; };
 		3F92E6D9285B38C000FCB5EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6D8285B38C000FCB5EC /* MainVC.swift */; };
@@ -55,7 +54,6 @@
 		3F92E6C7285ADF6B00FCB5EC /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		3F92E6C8285ADF6C00FCB5EC /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
 		3F92E6C9285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
-		3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Daema; In the Soop.jpeg"; sourceTree = "<group>"; };
 		3F92E6D4285B33F800FCB5EC /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		3F92E6D6285B353200FCB5EC /* NewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
 		3F92E6D8285B38C000FCB5EC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */,
 				3F92E6AD285AD15F00FCB5EC /* Main.storyboard */,
 				3F92E6B3285AD16000FCB5EC /* Assets.xcassets */,
-				3F92E6D1285B1FD500FCB5EC /* Daema; In the Soop.jpeg */,
 				3F92E6B5285AD16000FCB5EC /* LaunchScreen.storyboard */,
 				3F92E6C0285ADD6E00FCB5EC /* Font */,
 				3F92E6B8285AD16000FCB5EC /* Info.plist */,
@@ -262,7 +259,6 @@
 				3F92E6BF285AD9C900FCB5EC /* StretchPro.otf in Resources */,
 				3F92E6C2285ADECA00FCB5EC /* SF-Pro.ttf in Resources */,
 				3F92E6CE285ADF6C00FCB5EC /* SpoqaHanSansNeo-Bold.otf in Resources */,
-				3F92E6D2285B1FD500FCB5EC /* Daema; In the Soop.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

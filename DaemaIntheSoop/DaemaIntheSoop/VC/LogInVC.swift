@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LogInVC: UIViewController {
     @IBOutlet weak var txtFieldID: UITextField!

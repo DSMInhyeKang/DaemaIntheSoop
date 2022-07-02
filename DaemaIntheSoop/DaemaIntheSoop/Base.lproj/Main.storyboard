@@ -252,7 +252,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="5Au-VM-LZS">
-                                <rect key="frame" x="50" y="204" width="314" height="579"/>
+                                <rect key="frame" x="48" y="204" width="316" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -267,7 +267,7 @@
                             <constraint firstItem="5Au-VM-LZS" firstAttribute="top" secondItem="aMN-vz-nys" secondAttribute="bottom" constant="20" id="4Ml-KT-6oI"/>
                             <constraint firstItem="7mG-6a-dr2" firstAttribute="bottom" secondItem="5Au-VM-LZS" secondAttribute="bottom" constant="30" id="FzD-qj-NGR"/>
                             <constraint firstItem="aMN-vz-nys" firstAttribute="top" secondItem="YQ9-cC-plt" secondAttribute="bottom" id="Uow-aV-Lms"/>
-                            <constraint firstItem="5Au-VM-LZS" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="50" id="VZ4-pP-riU"/>
+                            <constraint firstItem="5Au-VM-LZS" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="48" id="VZ4-pP-riU"/>
                             <constraint firstItem="aMN-vz-nys" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="55" id="Y4B-Rb-9tT"/>
                             <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="5Au-VM-LZS" secondAttribute="trailing" constant="50" id="aod-Kh-yEV"/>
                             <constraint firstItem="YQ9-cC-plt" firstAttribute="top" secondItem="7mG-6a-dr2" secondAttribute="top" constant="45" id="csf-gE-Fb2"/>
