@@ -234,7 +234,7 @@
         <!--DetailVC-->
         <scene sceneID="yXi-EF-ibx">
             <objects>
-                <viewController id="LCv-uI-ce7" customClass="DetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" title="DetailVC" id="LCv-uI-ce7" customClass="DetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="evi-tj-MIt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,6 +274,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F9E-AF-OW5"/>
+                    <connections>
+                        <outlet property="lbPostTitle" destination="YQ9-cC-plt" id="DoN-Dl-lr4"/>
+                        <outlet property="lbPostWriter" destination="aMN-vz-nys" id="RMW-Wi-kIg"/>
+                        <outlet property="txtViewContent" destination="5Au-VM-LZS" id="mQ7-Iv-Jc9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1F-md-ZTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

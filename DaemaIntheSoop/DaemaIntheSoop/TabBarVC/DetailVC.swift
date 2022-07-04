@@ -14,50 +14,32 @@ class DetailVC: UIViewController {
     @IBOutlet weak var txtViewContent: UITextView!
     
     
-//    var result: [resultsArr] = []
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        lbPostTitle.delegate = self
-//        lbPostTitle.dataSource = self
-//
-//        getUsers()
-//    }
-//
-//    private func getUsers() {
-//        AF.request("http://35.216.6.254:8080/board/all", method: .get)
-//            .validate(statusCode: 200..<500)
-//            .responseDecodable(of: [resultsArr].self) {
-//                response in switch response.result {
-//                case.success:
-//                    if let data = try? JSONDecoder().decode([resultsArr].self, from: response.data!){
-//                        print(data)
-//                        DispatchQueue.main.async {
-//                            self.result = data
-//                            self.listTableView.reloadData()
-//                        }
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-//    }
-//
-//
-//
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//
+    var result: [DetailPostModel] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        getPostDetail()
+    }
+
+    private func getPostDetail() {
+        AF.request("http://35.216.6.254:8080/board/all", method: .get)
+            .validate(statusCode: 200..<500)
+            .responseDecodable(of: [DetailPostModel].self) {
+                response in switch response.result {
+                case.success:
+                    if let data = try? JSONDecoder().decode([DetailPostModel].self, from: response.data!){
+                        print(data)
+                        DispatchQueue.main.async {
+                            self.result = data
+                        }
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+
 //}
 //
 //extension MainVC: UITableViewDataSource, UITableViewDelegate {

@@ -20,10 +20,10 @@ class MainVC: UIViewController {
         listTableView.delegate = self
         listTableView.dataSource = self
         
-        getUsers()
+        getPostList()
     }
     
-    private func getUsers() {
+    private func getPostList() {
         AF.request("http://35.216.6.254:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
             .responseData {

@@ -12,19 +12,57 @@ class LogInVC: UIViewController {
     @IBOutlet weak var txtFieldID: UITextField!
     @IBOutlet weak var txtFieldPW: UITextField!
     @IBAction func btnLogIn(_ sender: Any) {
-        guard let logInVC = self.storyboard?.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else { return }
+       
         
-        logInVC.modalPresentationStyle = .fullScreen
-        
-        self.present(logInVC, animated: true, completion: nil)
+        signup()
     }
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    private func signup() {
+        let url = "http://35.216.6.254:8080/register"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 10
+        
+        // POST 로 보낼 정보
+        let params: Parameters = [
+            "username": txtFieldID.text,
+            "password": txtFieldPW.text
+        ]
+
+        // httpBody 에 parameters 추가
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request).response { (response) in
+            print(response.request)
+            switch response.result {
+            case .success:
+                guard let logInVC = self.storyboard?.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else { return }
+                
+                logInVC.modalPresentationStyle = .fullScreen
+                
+                self.present(logInVC, animated: true, completion: nil)
+                
+            case .failure(let error):
+                let failOnAlert = UIAlertController(title: "안내", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "아이디와 패스워드를 다시 확인해주세요.", style: UIAlertAction.Style.default, handler: nil)
+                
+                failOnAlert.addAction(onAction)
+                self.present(failOnAlert, animated: true, completion: nil)
+            }
+        }
     }
     
 
@@ -39,3 +77,5 @@ class LogInVC: UIViewController {
     */
 
 }
+
+
