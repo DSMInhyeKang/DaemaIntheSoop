@@ -42,9 +42,18 @@ class LogInVC: UIViewController {
             print("http Body Error")
         }
         
+        
+        
+        
         AF.request(request).response { (response) in
             switch response.result {
             case .success:
+                
+                if let data = try? JSONDecoder().decode(TokenModel.self, from: response.data!) {
+                    KeyChain.create(key: "accessToken", token: data.accessToken)
+                    KeyChain.create(key: "refreshToken", token: data.refreshToken)
+                }
+                
                 guard let logInVC = self.storyboard?.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else { return }
                 
                 logInVC.modalPresentationStyle = .fullScreen
@@ -61,18 +70,6 @@ class LogInVC: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 

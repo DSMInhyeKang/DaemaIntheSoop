@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BodyModel: Codable {
+struct TokenModel: Codable {
     var accessToken: String
     var refreshToken: String
 }

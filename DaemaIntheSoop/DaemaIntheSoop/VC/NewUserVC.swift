@@ -33,7 +33,7 @@ class NewUserVC: UIViewController {
         
         // POST 로 보낼 정보
         let params = [
-            "username": "txtFieldUsername"
+            "username": "\(txtFieldUsername!)"
         ] as Dictionary
 
         // httpBody 에 parameters 추가
@@ -74,10 +74,13 @@ class NewUserVC: UIViewController {
             print("http Body Error")
         }
         
+        
+        
         AF.request(request).response { (response) in
             print(response.request ?? "")
             switch response.result {
             case .success:
+                
                 let successOnAlert = UIAlertController(title: "안내", message: "회원가입 성공!", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 
