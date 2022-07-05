@@ -15,13 +15,11 @@ class LogInVC: UIViewController {
         signup()
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
     
     private func signup() {
         let url = "http://35.216.6.254:8080/register"
@@ -43,8 +41,6 @@ class LogInVC: UIViewController {
         }
         
         
-        
-        
         AF.request(request).response { (response) in
             switch response.result {
             case .success:
@@ -57,7 +53,6 @@ class LogInVC: UIViewController {
                 guard let logInVC = self.storyboard?.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else { return }
                 
                 logInVC.modalPresentationStyle = .fullScreen
-                
                 self.present(logInVC, animated: true, completion: nil)
                 
             case .failure(let error):
