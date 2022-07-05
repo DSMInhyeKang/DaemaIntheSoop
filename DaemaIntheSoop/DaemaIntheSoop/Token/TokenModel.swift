@@ -2,13 +2,12 @@
 //  TokenModel.swift
 //  DaemaIntheSoop
 //
-//  Created by 강인혜 on 2022/07/04.
+//  Created by 강인혜 on 2022/07/05.
 //
 
 import Foundation
 
-struct TokenModel: Codable {
-    let accessToken: String
-    let refreshToken: String
-    let expiredAt: String
+struct BodyModel: Codable {
+    var accessToken: String
+    var refreshToken: String
 }
