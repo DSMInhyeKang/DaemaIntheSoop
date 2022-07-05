@@ -21,24 +21,29 @@ class NewPostVC: UIViewController {
         let txtFieldNewTitle = self.txtFieldNewTitle.text
         let txtViewNewContent = self.txtViewNewContent.text
         
+        
+        //HTTPHeaders().add(name: "accessToken", value: data.accessToken)
+        //HTTPHeaders().add(name: "refreshToken", value: data.refreshToken)
+        
         //전송할 값
         let url = "http://35.216.6.254:8080/board"
         var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
+        request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
         
         // POST 로 보낼 정보
-        let params = ["title": "\(txtFieldNewTitle!)",
-                      "content": "\(txtViewNewContent!)"] as Dictionary
+        let params = ["title" : txtFieldNewTitle!,
+                      "content" : txtViewNewContent!] as Dictionary
         
         // httpBody 에 parameters 추가
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+            
         } catch {
             print("http Body Error")
         }
-        
+
         AF.request(request).response { (response) in
             print(response.request ?? "")
             switch response.result {
