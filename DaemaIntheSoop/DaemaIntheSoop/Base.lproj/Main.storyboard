@@ -552,8 +552,24 @@
                     <view key="view" contentMode="scaleToFill" id="Zww-gN-0pG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogOut" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Hq-him">
+                                <rect key="frame" x="170" y="433" width="74" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="btnLogOut:" destination="u39-4i-eLr" eventType="touchUpInside" id="8b3-wU-WUG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="j9J-Po-ueB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="bottom" secondItem="Rw1-Hq-him" secondAttribute="bottom" constant="345" id="GVC-XK-lWb"/>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="Rw1-Hq-him" secondAttribute="trailing" constant="170" id="kcS-ha-HhW"/>
+                            <constraint firstItem="Rw1-Hq-him" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="345" id="nlB-aB-VnP"/>
+                            <constraint firstItem="Rw1-Hq-him" firstAttribute="leading" secondItem="j9J-Po-ueB" secondAttribute="leading" constant="170" id="rr9-TS-Z1n"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1V8-wG-uKT"/>
                 </viewController>
