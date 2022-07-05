@@ -24,7 +24,8 @@ class ViewController: UIViewController {
         lbAppTitle.text = "Daema; In the Soop"
         lbAppTitle.font = UIFont(name: "StretchProRegular", size: 55)
         
-        }
+        
+    }
 
 }
 

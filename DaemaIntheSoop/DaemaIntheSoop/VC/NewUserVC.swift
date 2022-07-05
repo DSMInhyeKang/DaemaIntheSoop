@@ -44,11 +44,10 @@ class NewUserVC: UIViewController {
         }
         
         AF.request(request).response { (response) in
-            print(response.request)
             switch response.result {
             case .success:
                 self.lbUserState.text = "사용 가능한 아이디입니다."
-            case .failure(let error):
+            case .failure(_):
                 self.lbUserState.text = "이미 존재하는 사용자입니다."
             }
         }
@@ -60,13 +59,12 @@ class NewUserVC: UIViewController {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 10
         
         // POST 로 보낼 정보
         let params: Parameters = [
-            "username": txtFieldUsername.text,
-            "name": txtFieldName.text,
-            "password": txtFieldPW.text
+            "username": txtFieldUsername.text!,
+            "name": txtFieldName.text!,
+            "password": txtFieldPW.text!
         ]
 
         // httpBody 에 parameters 추가
@@ -77,7 +75,7 @@ class NewUserVC: UIViewController {
         }
         
         AF.request(request).response { (response) in
-            print(response.request)
+            print(response.request ?? "")
             switch response.result {
             case .success:
                 let successOnAlert = UIAlertController(title: "안내", message: "회원가입 성공!", preferredStyle: UIAlertController.Style.alert)
@@ -87,6 +85,7 @@ class NewUserVC: UIViewController {
                 self.present(successOnAlert, animated: true, completion: nil)
                 
             case .failure(let error):
+                print(error)
                 let failOnAlert = UIAlertController(title: "안내", message: "이미 존재하는 사용자입니다.", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 

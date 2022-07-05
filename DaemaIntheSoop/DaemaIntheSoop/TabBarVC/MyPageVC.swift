@@ -15,7 +15,11 @@ class MyPageVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func btnLogOut(_ sender: Any) {
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 

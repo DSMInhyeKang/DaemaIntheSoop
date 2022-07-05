@@ -31,7 +31,6 @@ class MainVC: UIViewController {
                 case.success:
                     print(response.result)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
-                        print(data)
                         DispatchQueue.main.async {
                             self.result = data.content
                             self.listTableView.reloadData()
@@ -42,21 +41,6 @@ class MainVC: UIViewController {
                 }
             }
     }
-        
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
 }
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {

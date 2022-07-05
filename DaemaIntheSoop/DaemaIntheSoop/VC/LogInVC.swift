@@ -12,8 +12,6 @@ class LogInVC: UIViewController {
     @IBOutlet weak var txtFieldID: UITextField!
     @IBOutlet weak var txtFieldPW: UITextField!
     @IBAction func btnLogIn(_ sender: Any) {
-       
-        
         signup()
     }
     
@@ -30,12 +28,11 @@ class LogInVC: UIViewController {
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 10
         
         // POST 로 보낼 정보
         let params: Parameters = [
-            "username": txtFieldID.text,
-            "password": txtFieldPW.text
+            "username": "\(txtFieldID.text!)",
+            "password": "\(txtFieldPW.text!)"
         ]
 
         // httpBody 에 parameters 추가
@@ -46,7 +43,6 @@ class LogInVC: UIViewController {
         }
         
         AF.request(request).response { (response) in
-            print(response.request)
             switch response.result {
             case .success:
                 guard let logInVC = self.storyboard?.instantiateViewController(identifier: "TabBarVC") as? TabBarVC else { return }
@@ -56,6 +52,7 @@ class LogInVC: UIViewController {
                 self.present(logInVC, animated: true, completion: nil)
                 
             case .failure(let error):
+                print(error)
                 let failOnAlert = UIAlertController(title: "안내", message: "로그인 실패", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "아이디와 패스워드를 다시 확인해주세요.", style: UIAlertAction.Style.default, handler: nil)
                 
