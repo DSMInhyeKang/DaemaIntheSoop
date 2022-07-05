@@ -23,7 +23,7 @@ class NewUserVC: UIViewController {
     @IBAction func btnCheckUser(_ sender: Any) {
         
         let txtFieldUsername = self.txtFieldUsername.text
-        
+
         
         let url = "http://35.216.6.254:8080/register"
         var request = URLRequest(url: URL(string: url)!)
