@@ -12,7 +12,7 @@ class LogInVC: UIViewController {
     @IBOutlet weak var txtFieldID: UITextField!
     @IBOutlet weak var txtFieldPW: UITextField!
     @IBAction func btnLogIn(_ sender: Any) {
-        signup()
+        signin()
     }
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class LogInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    private func signup() {
+    private func signin() {
         let url = "http://35.216.6.254:8080/register"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"

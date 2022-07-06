@@ -22,15 +22,18 @@ class NewPostVC: UIViewController {
         let txtViewNewContent = self.txtViewNewContent.text
         
         
-        //HTTPHeaders().add(name: "accessToken", value: data.accessToken)
-        //HTTPHeaders().add(name: "refreshToken", value: data.refreshToken)
-        
         //전송할 값
         let url = "http://35.216.6.254:8080/board"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
+        
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue( "Bearer \(KeyChain.read(key: "accessToken"))", forHTTPHeaderField: "Authorization")
+        
         
         // POST 로 보낼 정보
         let params = ["title" : txtFieldNewTitle!,
