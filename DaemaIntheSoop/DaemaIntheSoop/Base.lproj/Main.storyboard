@@ -312,6 +312,12 @@
                         <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" systemColor="labelColor"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="03P-Oq-wsR" kind="relationship" relationship="viewControllers" id="VOs-jX-GEk"/>
@@ -580,7 +586,7 @@
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="32" height="32"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.fill" catalog="system" width="32" height="32"/>
         <image name="square.and.pencil" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
