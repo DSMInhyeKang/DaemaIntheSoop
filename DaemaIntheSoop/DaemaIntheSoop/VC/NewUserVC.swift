@@ -80,6 +80,7 @@ class NewUserVC: UIViewController {
             print(response.request ?? "")
             switch response.result {
             case .success:
+                debugPrint(response)
                 
                 let successOnAlert = UIAlertController(title: "안내", message: "회원가입 성공!", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "로그인 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
