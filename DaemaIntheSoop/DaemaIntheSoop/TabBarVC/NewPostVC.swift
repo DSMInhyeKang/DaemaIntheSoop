@@ -32,8 +32,7 @@ class NewPostVC: UIViewController {
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue( "Bearer \(KeyChain.read(key: "accessToken"))", forHTTPHeaderField: "Authorization")
-        
+        request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
         // POST 로 보낼 정보
         let params = ["title" : txtFieldNewTitle!,
@@ -51,6 +50,7 @@ class NewPostVC: UIViewController {
             print(response.request ?? "")
             switch response.result {
             case .success:
+                debugPrint(response)
                 let successOnAlert = UIAlertController(title: "안내", message: "게시글 등록 성공", preferredStyle: UIAlertController.Style.alert)
                 let onAction = UIAlertAction(title: "게시글 작성 페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 
