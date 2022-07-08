@@ -22,7 +22,7 @@ class LogInVC: UIViewController {
     }
     
     private func signin() {
-        let url = "http://35.216.6.254:8080/register"
+        let url = "http://35.216.6.254:8080/login"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -44,6 +44,7 @@ class LogInVC: UIViewController {
         AF.request(request).response { (response) in
             switch response.result {
             case .success:
+                debugPrint(response)
                 
                 if let data = try? JSONDecoder().decode(TokenModel.self, from: response.data!) {
                     KeyChain.create(key: "accessToken", token: data.accessToken)
@@ -54,6 +55,7 @@ class LogInVC: UIViewController {
                 
                 logInVC.modalPresentationStyle = .fullScreen
                 self.present(logInVC, animated: true, completion: nil)
+                
                 
             case .failure(let error):
                 print(error)
