@@ -24,12 +24,13 @@ class MainVC: UIViewController {
     }
     
     private func getPostList() {
-        AF.request("http://35.216.6.254:8080/board/all", method: .get)
+        AF.request("http://35.216.6.254:8080/board/all?page=0&size=30", method: .get)
             .validate(statusCode: 200..<500)
             .responseData {
                 response in switch response.result {
                 case.success:
-                    print(response.result)
+//                    print(response.result)
+                    debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
                         DispatchQueue.main.async {
                             self.result = data.content
