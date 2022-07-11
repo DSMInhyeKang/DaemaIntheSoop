@@ -23,14 +23,14 @@ class NewPostVC: UIViewController {
         
         
         //전송할 값
-        let url = "http://35.216.6.254:8080//board/all?page=0&size=30"
+        let url = "http://35.216.6.254:8080/board"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
         
         
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         

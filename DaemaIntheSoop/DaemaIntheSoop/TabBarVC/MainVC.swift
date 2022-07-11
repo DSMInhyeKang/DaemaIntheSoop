@@ -24,11 +24,11 @@ class MainVC: UIViewController {
     }
     
     private func getPostList() {
-        AF.request("http://35.216.6.254:8080/board/all?page=0&size=30", method: .get)
+        AF.request("http://35.216.6.254:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
             .responseData {
                 response in switch response.result {
-                case.success:
+                case .success:
 //                    print(response.result)
                     debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
@@ -36,6 +36,7 @@ class MainVC: UIViewController {
                             self.result = data.content
                             self.listTableView.reloadData()
                         }
+                        
                     }
                 case .failure(let error):
                     print(error)
@@ -55,5 +56,13 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         cell.lbTitle.text = "\(result[indexPath.row].title)"
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        listTableView.deselectRow(at: indexPath, animated: true)
+        guard let view = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC else { return }
+        view.postTitle = "\(result[indexPath.row].title)"
+        view.postWriter = "\(result[indexPath.row].username)"
+        view.txt = "\(result[indexPath.row].title)"
+        navigationController?.pushViewController(view, animated: true)
+    }
 }

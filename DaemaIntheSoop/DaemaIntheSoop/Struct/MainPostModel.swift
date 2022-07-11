@@ -12,7 +12,8 @@ struct MainPostModel: Codable {
 }
 
 struct Content: Codable {
-    let username: String
-    let title: String
-    let content: String
+    var id: Int
+    var username: String
+    var title: String
+    var content: String
 }
