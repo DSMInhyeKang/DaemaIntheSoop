@@ -13,32 +13,38 @@ class DetailVC: UIViewController {
     @IBOutlet weak var lbPostWriter: UILabel!
     @IBOutlet weak var txtViewContent: UITextView!
     
+    var postTitle: String = ""
+    var postWriter: String = ""
+    var txt: String = ""
     
-    var result: [DetailPostModel] = []
+    
+    var result: [MainPostModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getPostDetail()
+        lbPostTitle.text = "\(postTitle)"
+        lbPostWriter.text = "\(postWriter)"
+        txtViewContent.text = "\(txt)"
+//        getPostDetail()
     }
 
-    private func getPostDetail() {
-        AF.request("http://35.216.6.254:8080/board/all", method: .get)
-            .validate(statusCode: 200..<500)
-            .responseDecodable(of: [DetailPostModel].self) {
-                response in switch response.result {
-                case.success:
-                    if let data = try? JSONDecoder().decode([DetailPostModel].self, from: response.data!){
-                        print(data)
-                        DispatchQueue.main.async {
-                            self.result = data
-                        }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-    }
+//    private func getPostDetail() {
+//        AF.request("http://35.216.6.254:8080/board/all", method: .get)
+//            .validate(statusCode: 200..<500)
+//            .responseDecodable(of: [MainPostModel].self) {
+//                response in switch response.result {
+//                case .success:
+//                    if let data = try? JSONDecoder().decode([MainPostModel].self, from: response.data!){
+//                        print(data)
+//                        DispatchQueue.main.async {
+//                            self.result = data
+//                        }
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
 
 //}
 //
