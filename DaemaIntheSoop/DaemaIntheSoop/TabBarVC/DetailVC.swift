@@ -60,4 +60,16 @@ class DetailVC: UIViewController {
 //        return cell
 //    }
 //
+    
+    @IBAction func reviseBtn(_ sender: UIBarButtonItem) {
+        guard let view = self.storyboard?.instantiateViewController(withIdentifier: "ReviseVC") as? ReviseVC else { return }
+        
+//        view.reviseTitle = "\(lbPostTitle.text)"
+//        view.reviseUser = "\(lbPostWriter.text)"
+//        view.reviseContent = "\(txtViewContent.text)"
+//
+//        navigationController?.pushViewController(view, animated: true)
+    }
+    
+
 }
