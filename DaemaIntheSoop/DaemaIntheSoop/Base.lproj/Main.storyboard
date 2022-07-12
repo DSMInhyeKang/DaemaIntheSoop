@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -257,24 +258,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep2-JB-k69">
-                                <rect key="frame" x="350" y="54" width="24" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep2-JB-k69">
+                                <rect key="frame" x="347.5" y="44" width="46.5" height="31"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="character.cursor.ibeam" catalog="system" symbolScale="large"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="character.cursor.ibeam" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="reviseBtn:" destination="LCv-uI-ce7" eventType="touchUpInside" id="1mT-e9-f3P"/>
+                                </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ckz-nd-c0c">
-                                <rect key="frame" x="0.0" y="50" width="414" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem id="HNI-N4-zVe">
-                                        <barButtonItem key="rightBarButtonItem" image="text.cursor" catalog="system" style="done" id="j87-Fl-VSS">
-                                            <connections>
-                                                <action selector="reviseBtn:" destination="Rfh-tK-87R" id="mhL-QL-11Q"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7mG-6a-dr2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -282,15 +278,14 @@
                             <constraint firstItem="YQ9-cC-plt" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="45" id="1Op-c0-L6Q"/>
                             <constraint firstItem="5Au-VM-LZS" firstAttribute="top" secondItem="aMN-vz-nys" secondAttribute="bottom" constant="20" id="4Ml-KT-6oI"/>
                             <constraint firstItem="7mG-6a-dr2" firstAttribute="bottom" secondItem="5Au-VM-LZS" secondAttribute="bottom" constant="30" id="FzD-qj-NGR"/>
-                            <constraint firstItem="Ckz-nd-c0c" firstAttribute="trailing" secondItem="7mG-6a-dr2" secondAttribute="trailing" id="QBN-vs-LKZ"/>
                             <constraint firstItem="aMN-vz-nys" firstAttribute="top" secondItem="YQ9-cC-plt" secondAttribute="bottom" id="Uow-aV-Lms"/>
                             <constraint firstItem="5Au-VM-LZS" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="43" id="VZ4-pP-riU"/>
-                            <constraint firstItem="Ckz-nd-c0c" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" id="W9m-te-ppS"/>
                             <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="YQ9-cC-plt" secondAttribute="trailing" constant="50" id="WVp-Ix-IJk"/>
                             <constraint firstItem="aMN-vz-nys" firstAttribute="leading" secondItem="7mG-6a-dr2" secondAttribute="leading" constant="50" id="Y4B-Rb-9tT"/>
                             <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="5Au-VM-LZS" secondAttribute="trailing" constant="45" id="aod-Kh-yEV"/>
+                            <constraint firstItem="7mG-6a-dr2" firstAttribute="trailing" secondItem="ep2-JB-k69" secondAttribute="trailing" constant="20" id="bkT-re-L0b"/>
                             <constraint firstItem="YQ9-cC-plt" firstAttribute="top" secondItem="7mG-6a-dr2" secondAttribute="top" constant="45" id="csf-gE-Fb2"/>
-                            <constraint firstItem="Ckz-nd-c0c" firstAttribute="top" secondItem="evi-tj-MIt" secondAttribute="top" constant="50" id="hWL-un-AaU"/>
+                            <constraint firstItem="ep2-JB-k69" firstAttribute="top" secondItem="7mG-6a-dr2" secondAttribute="top" id="pDK-6H-1M1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F9E-AF-OW5"/>
@@ -301,7 +296,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1F-md-ZTF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Rfh-tK-87R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4139" y="-1116"/>
         </scene>
@@ -316,8 +310,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbReviseTitle" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hww-MD-9a4">
                                 <rect key="frame" x="45" y="84" width="319" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbReviseUser" text="User" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-Q2-P2B">
                                 <rect key="frame" x="50" y="114" width="38" height="21.5"/>
@@ -337,11 +329,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FSt-uq-dnF"/>
                                 </constraints>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="수정하기">
+                                <buttonConfiguration key="configuration" style="tinted" title="수정하기">
                                     <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="reviseBtn:" destination="E18-Ml-9wr" eventType="touchUpInside" id="a5f-5D-pQq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t27-GN-2cT"/>
@@ -362,9 +357,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbReviseTitle" destination="sl5-Q2-P2B" id="LjH-Zj-KWS"/>
+                        <outlet property="lbReviseTitle" destination="hww-MD-9a4" id="7vs-4P-wEF"/>
                         <outlet property="lbReviseUser" destination="sl5-Q2-P2B" id="GvB-a6-Nwe"/>
-                        <outlet property="txtViewReviseContent" destination="Gl1-LP-mir" id="ZZm-1q-yfb"/>
+                        <outlet property="txtViewReviseContent" destination="Gl1-LP-mir" id="p4e-W4-EnH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocx-Qm-iX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -595,7 +590,7 @@
                                 <rect key="frame" x="30" y="207.5" width="354" height="525.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnSendPost" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCF-ka-RlW">
@@ -605,7 +600,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="게시">
-                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="15"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnSendPost:" destination="Zot-T5-Nw3" eventType="touchUpInside" id="oVi-tC-qZ0"/>
@@ -672,10 +667,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="character.cursor.ibeam" catalog="system" width="128" height="118"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
-        <image name="text.cursor" catalog="system" width="128" height="118"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -684,6 +679,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
