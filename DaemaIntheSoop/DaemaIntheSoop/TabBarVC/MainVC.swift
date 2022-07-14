@@ -15,7 +15,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var result: [Content] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +51,6 @@ class MainVC: UIViewController {
                             self.result = data.content
                             self.listTableView.reloadData()
                         }
-                        
                     }
                 case .failure(let error):
                     print(error)
@@ -72,13 +70,16 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         cell.lbTitle.text = "\(result[indexPath.row].title)"
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         listTableView.deselectRow(at: indexPath, animated: true)
         guard let view = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC else { return }
         view.postTitle = "\(result[indexPath.row].title)"
         view.postWriter = "\(result[indexPath.row].username)"
         view.txt = "\(result[indexPath.row].content)"
+//        view.indexList = indexList
+//        view.indexValue = indexPath.row
+        view.id = result[indexPath.row].id
         navigationController?.pushViewController(view, animated: true)
     }
 }

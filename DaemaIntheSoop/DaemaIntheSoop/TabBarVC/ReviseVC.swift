@@ -13,6 +13,7 @@ class ReviseVC: UIViewController {
     @IBOutlet weak var lbReviseUser: UILabel!
     @IBOutlet weak var txtViewReviseContent: UITextView!
     
+    var id: Int = 0
     var reviseTitle: String = ""
     var reviseUser: String = ""
     var reviseContent: String = ""
@@ -24,24 +25,24 @@ class ReviseVC: UIViewController {
         txtViewReviseContent.text = "\(reviseContent)"
     }
     
+    
     @IBAction func reviseBtn(_ sender: UIButton) {
         let lbReviseTitle = self.lbReviseTitle.text
         let txtViewReviseContent = self.txtViewReviseContent.text
         
         
         //전송할 값
-        let url = "http://35.216.6.254:8080/board"
+        let url = "http://35.216.6.254:8080/board/\(id)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .patch
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
         
         
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
-        // POST 로 보낼 정보
+       
         let params = ["title" : lbReviseTitle!,
                       "content" : txtViewReviseContent!] as Dictionary
         

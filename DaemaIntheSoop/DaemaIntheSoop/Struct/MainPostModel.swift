@@ -16,4 +16,5 @@ struct Content: Codable {
     var username: String
     var title: String
     var content: String
+    var comments: [String]
 }

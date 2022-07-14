@@ -13,11 +13,13 @@ class DetailVC: UIViewController {
     @IBOutlet weak var lbPostWriter: UILabel!
     @IBOutlet weak var txtViewContent: UITextView!
     
+    var id: Int = 0
     var postTitle: String = ""
     var postWriter: String = ""
     var txt: String = ""
-    
+    var indexList = [MainPostModel]()
     var result: [MainPostModel] = []
+    var indexValue = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,9 @@ class DetailVC: UIViewController {
         view.reviseTitle = "\(lbPostTitle.text!)"
         view.reviseUser = "\(lbPostWriter.text!)"
         view.reviseContent = "\(txtViewContent.text!)"
+        view.id = self.id
         navigationController?.pushViewController(view, animated: true)
     }
-    
     
     
     
