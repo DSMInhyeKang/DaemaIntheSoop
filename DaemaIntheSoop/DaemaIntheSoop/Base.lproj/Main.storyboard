@@ -118,6 +118,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogIn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-Bq-qgk">
                                 <rect key="frame" x="30" y="377" width="354" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dL0-Xw-nEx"/>
                                 </constraints>
@@ -132,6 +133,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="4aM-94-7hQ"/>
@@ -307,18 +309,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbReviseTitle" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hww-MD-9a4">
-                                <rect key="frame" x="45" y="84" width="319" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbReviseUser" text="User" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-Q2-P2B">
-                                <rect key="frame" x="50" y="114" width="38" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="txtViewReviseContent" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Gl1-LP-mir">
-                                <rect key="frame" x="43" y="155.5" width="326" height="586.5"/>
+                                <rect key="frame" x="43" y="165" width="326" height="577"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -338,27 +330,38 @@
                                     <action selector="reviseBtn:" destination="E18-Ml-9wr" eventType="touchUpInside" id="a5f-5D-pQq"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TItle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-W5-t3H">
+                                <rect key="frame" x="45" y="84" width="319" height="39.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lbReviseUser" text="User" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-Q2-P2B">
+                                <rect key="frame" x="50" y="123.5" width="38" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t27-GN-2cT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hww-MD-9a4" firstAttribute="top" secondItem="t27-GN-2cT" secondAttribute="top" constant="40" id="3WQ-Iv-uCu"/>
+                            <constraint firstItem="sl5-Q2-P2B" firstAttribute="top" secondItem="Gw2-W5-t3H" secondAttribute="bottom" id="0oU-wt-c6z"/>
+                            <constraint firstItem="Gw2-W5-t3H" firstAttribute="leading" secondItem="t27-GN-2cT" secondAttribute="leading" constant="45" id="6AR-JB-Uq8"/>
                             <constraint firstItem="Gl1-LP-mir" firstAttribute="leading" secondItem="t27-GN-2cT" secondAttribute="leading" constant="43" id="ACG-a9-79l"/>
                             <constraint firstItem="5wS-vi-BSW" firstAttribute="top" secondItem="Gl1-LP-mir" secondAttribute="bottom" constant="30" id="MpG-ut-CSJ"/>
+                            <constraint firstItem="Gw2-W5-t3H" firstAttribute="top" secondItem="t27-GN-2cT" secondAttribute="top" constant="40" id="OL0-39-Xzr"/>
                             <constraint firstItem="sl5-Q2-P2B" firstAttribute="leading" secondItem="t27-GN-2cT" secondAttribute="leading" constant="50" id="TJc-Nt-fKS"/>
                             <constraint firstItem="t27-GN-2cT" firstAttribute="bottom" secondItem="5wS-vi-BSW" secondAttribute="bottom" constant="50" id="UOc-nu-YGP"/>
-                            <constraint firstItem="t27-GN-2cT" firstAttribute="trailing" secondItem="hww-MD-9a4" secondAttribute="trailing" constant="50" id="eLR-QZ-Hnj"/>
+                            <constraint firstItem="t27-GN-2cT" firstAttribute="trailing" secondItem="Gw2-W5-t3H" secondAttribute="trailing" constant="50" id="XPa-Sp-341"/>
                             <constraint firstItem="Gl1-LP-mir" firstAttribute="top" secondItem="sl5-Q2-P2B" secondAttribute="bottom" constant="20" id="gB9-hS-xH8"/>
                             <constraint firstItem="5wS-vi-BSW" firstAttribute="leading" secondItem="t27-GN-2cT" secondAttribute="leading" constant="50" id="lGY-E3-xfL"/>
                             <constraint firstItem="t27-GN-2cT" firstAttribute="trailing" secondItem="Gl1-LP-mir" secondAttribute="trailing" constant="45" id="rMa-71-04X"/>
-                            <constraint firstItem="hww-MD-9a4" firstAttribute="leading" secondItem="t27-GN-2cT" secondAttribute="leading" constant="45" id="rP7-YA-mLo"/>
                             <constraint firstItem="t27-GN-2cT" firstAttribute="trailing" secondItem="5wS-vi-BSW" secondAttribute="trailing" constant="50" id="xuA-GO-XdA"/>
-                            <constraint firstItem="sl5-Q2-P2B" firstAttribute="top" secondItem="hww-MD-9a4" secondAttribute="bottom" id="zsf-e7-Qy9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbReviseTitle" destination="hww-MD-9a4" id="7vs-4P-wEF"/>
                         <outlet property="lbReviseUser" destination="sl5-Q2-P2B" id="GvB-a6-Nwe"/>
+                        <outlet property="txtFieldReviseTitle" destination="Gw2-W5-t3H" id="aD5-9y-YSY"/>
                         <outlet property="txtViewReviseContent" destination="Gl1-LP-mir" id="p4e-W4-EnH"/>
                     </connections>
                 </viewController>
@@ -508,6 +511,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnNewUser" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-80-KhX">
                                 <rect key="frame" x="30" y="430.5" width="354" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kyb-FY-K6P"/>
                                 </constraints>
@@ -522,6 +526,7 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="tXC-Zr-BRE"/>
