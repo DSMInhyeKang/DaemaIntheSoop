@@ -16,8 +16,10 @@ class MyPageVC: UIViewController {
     }
     
     @IBAction func btnLogOut(_ sender: Any) {
+        guard let signOut = self.storyboard?.instantiateViewController(identifier: "LogInVC") as? LogInVC else { return }
         
-        
+        signOut.modalPresentationStyle = .fullScreen
+        self.present(signOut, animated: true, completion: nil)
     }
     
     /*
