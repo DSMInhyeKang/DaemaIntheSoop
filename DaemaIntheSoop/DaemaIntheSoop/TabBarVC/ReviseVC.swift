@@ -36,10 +36,11 @@ class ReviseVC: UIViewController {
         let url = "http://35.216.6.254:8080/board/\(id)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .patch
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 //        request.timeoutInterval = 10
         
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
