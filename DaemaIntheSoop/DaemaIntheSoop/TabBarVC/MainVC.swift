@@ -15,6 +15,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var result: [Content] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,7 +9,8 @@ import UIKit
 import Alamofire
 
 class ReviseVC: UIViewController {
-    @IBOutlet weak var lbReviseTitle: UILabel!
+    
+    @IBOutlet weak var txtFieldReviseTitle: UITextField!
     @IBOutlet weak var lbReviseUser: UILabel!
     @IBOutlet weak var txtViewReviseContent: UITextView!
     
@@ -20,14 +21,14 @@ class ReviseVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbReviseTitle.text = "\(reviseTitle)"
+        txtFieldReviseTitle.text = "\(reviseTitle)"
         lbReviseUser.text = "\(reviseUser)"
         txtViewReviseContent.text = "\(reviseContent)"
     }
     
     
     @IBAction func reviseBtn(_ sender: UIButton) {
-        let lbReviseTitle = self.lbReviseTitle.text
+        let textFieldReviseTitle = self.txtFieldReviseTitle.text
         let txtViewReviseContent = self.txtViewReviseContent.text
         
         
@@ -43,7 +44,7 @@ class ReviseVC: UIViewController {
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
        
-        let params = ["title" : lbReviseTitle!,
+        let params = ["title" : txtFieldReviseTitle!,
                       "content" : txtViewReviseContent!] as Dictionary
         
         // httpBody 에 parameters 추가
