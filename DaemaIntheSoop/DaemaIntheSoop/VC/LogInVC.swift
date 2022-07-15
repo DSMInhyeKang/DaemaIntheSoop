@@ -17,8 +17,10 @@ class LogInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let button = UIButton(type: .custom)
+        button.layer.cornerRadius = button.frame.width/2
+        button.clipsToBounds = true
     }
     
     private func signin() {
