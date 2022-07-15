@@ -116,27 +116,19 @@
                                     <segue destination="HWx-QU-GqH" kind="presentation" id="VD4-MF-8t6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogIn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-Bq-qgk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-tC-OKL">
                                 <rect key="frame" x="30" y="377" width="354" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dL0-Xw-nEx"/>
+                                    <constraint firstAttribute="height" constant="50" id="SmZ-mj-xjb"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="로그인하기">
-                                            <attributes>
-                                                <font key="NSFont" size="25" name="AppleSDGothicNeo-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <buttonConfiguration key="configuration" style="filled" title="로그인하기" cornerStyle="medium">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="4aM-94-7hQ"/>
+                                    <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="N3z-j8-NRi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,19 +138,19 @@
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="GJa-NV-xfZ" secondAttribute="trailing" constant="55" id="1sk-9i-wyc"/>
                             <constraint firstItem="GJa-NV-xfZ" firstAttribute="top" secondItem="L9H-o6-IU3" secondAttribute="bottom" constant="20" id="2e6-Xd-aFe"/>
                             <constraint firstItem="fUV-mF-ria" firstAttribute="leading" secondItem="x4w-kq-CeZ" secondAttribute="leading" id="4N0-7e-bZL"/>
-                            <constraint firstItem="aHo-Bq-qgk" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="30" id="9oe-mj-G9e"/>
                             <constraint firstItem="kqp-oO-hpt" firstAttribute="top" secondItem="GJa-NV-xfZ" secondAttribute="bottom" constant="40" id="AfO-sn-mbJ"/>
                             <constraint firstItem="GJa-NV-xfZ" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="55" id="CPK-Ud-rjv"/>
                             <constraint firstItem="fUV-mF-ria" firstAttribute="top" secondItem="fU6-Jy-aYZ" secondAttribute="bottom" constant="20" id="F0S-Ho-53u"/>
                             <constraint firstItem="L9H-o6-IU3" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="55" id="F0c-RD-HJI"/>
+                            <constraint firstItem="NaN-tC-OKL" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="30" id="FGx-GV-0O1"/>
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="kqp-oO-hpt" secondAttribute="trailing" id="OSb-YU-lCs"/>
                             <constraint firstAttribute="trailing" secondItem="fUV-mF-ria" secondAttribute="trailing" id="TsN-pk-uvf"/>
+                            <constraint firstItem="NaN-tC-OKL" firstAttribute="top" secondItem="kqp-oO-hpt" secondAttribute="bottom" constant="10" id="Tzw-9S-2us"/>
                             <constraint firstItem="L9H-o6-IU3" firstAttribute="top" secondItem="fUV-mF-ria" secondAttribute="bottom" constant="90" id="W8g-a2-M5T"/>
-                            <constraint firstItem="aHo-Bq-qgk" firstAttribute="top" secondItem="kqp-oO-hpt" secondAttribute="bottom" constant="10" id="WdQ-oC-1mA"/>
-                            <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="aHo-Bq-qgk" secondAttribute="trailing" constant="30" id="YEY-E6-361"/>
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="L9H-o6-IU3" secondAttribute="trailing" constant="55" id="c4n-Rv-vbD"/>
                             <constraint firstItem="fU6-Jy-aYZ" firstAttribute="top" secondItem="x4w-kq-CeZ" secondAttribute="topMargin" constant="25" id="i40-ie-pQL"/>
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="fU6-Jy-aYZ" secondAttribute="trailing" id="juS-hb-0ZK"/>
+                            <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="NaN-tC-OKL" secondAttribute="trailing" constant="30" id="sYD-I4-Ny8"/>
                             <constraint firstItem="kqp-oO-hpt" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" id="sjk-Mt-NWm"/>
                             <constraint firstItem="fU6-Jy-aYZ" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" id="vau-Od-foY"/>
                         </constraints>
@@ -509,15 +501,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnNewUser" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-80-KhX">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="btnNewUser" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-80-KhX">
                                 <rect key="frame" x="30" y="430.5" width="354" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kyb-FY-K6P"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="large">
                                     <attributedString key="attributedTitle">
                                         <fragment content="회원가입">
                                             <attributes>
@@ -529,7 +520,6 @@
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnLogIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="tXC-Zr-BRE"/>
                                     <action selector="btnNewUser:" destination="HWx-QU-GqH" eventType="touchUpInside" id="Am7-vm-GOT"/>
                                 </connections>
                             </button>
