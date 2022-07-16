@@ -8,7 +8,8 @@
 import UIKit
 
 class MyPageVC: UIViewController {
-
+    @IBOutlet weak var myPostsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
