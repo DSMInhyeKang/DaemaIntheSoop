@@ -8,7 +8,8 @@
 import UIKit
 
 class MyPostCell: UITableViewCell {
-
+    @IBOutlet weak var lbMyPostTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
