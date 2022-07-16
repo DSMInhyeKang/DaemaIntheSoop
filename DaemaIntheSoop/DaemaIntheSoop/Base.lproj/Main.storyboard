@@ -638,24 +638,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogOut" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Hq-him">
-                                <rect key="frame" x="170" y="433" width="74" height="35"/>
+                                <rect key="frame" x="291.5" y="118" width="72.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                 <connections>
                                     <action selector="btnLogOut:" destination="u39-4i-eLr" eventType="touchUpInside" id="8b3-wU-WUG"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-qP-bX0">
+                                <rect key="frame" x="0.0" y="288" width="414" height="525"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myListCell" id="GUn-LA-8Rg">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUn-LA-8Rg" id="6jR-Jf-KDB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j9J-Po-ueB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="j9J-Po-ueB" firstAttribute="bottom" secondItem="Rw1-Hq-him" secondAttribute="bottom" constant="345" id="GVC-XK-lWb"/>
-                            <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="Rw1-Hq-him" secondAttribute="trailing" constant="170" id="kcS-ha-HhW"/>
-                            <constraint firstItem="Rw1-Hq-him" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="345" id="nlB-aB-VnP"/>
-                            <constraint firstItem="Rw1-Hq-him" firstAttribute="leading" secondItem="j9J-Po-ueB" secondAttribute="leading" constant="170" id="rr9-TS-Z1n"/>
+                            <constraint firstItem="l2G-qP-bX0" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="200" id="2aQ-Ku-JLL"/>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="Rw1-Hq-him" secondAttribute="trailing" constant="50" id="DNV-03-iDU"/>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="l2G-qP-bX0" secondAttribute="trailing" id="dLW-fh-EVW"/>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="bottom" secondItem="l2G-qP-bX0" secondAttribute="bottom" id="slb-Kt-iGo"/>
+                            <constraint firstItem="l2G-qP-bX0" firstAttribute="leading" secondItem="j9J-Po-ueB" secondAttribute="leading" id="t6y-oT-DdK"/>
+                            <constraint firstItem="Rw1-Hq-him" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="30" id="ysn-NS-IVm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1V8-wG-uKT"/>
+                    <connections>
+                        <outlet property="myPostsTableView" destination="l2G-qP-bX0" id="y2x-5e-RWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rel-65-leG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
