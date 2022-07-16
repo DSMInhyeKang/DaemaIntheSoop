@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3CD2B92883087100599190 /* MyPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CD2B82883087100599190 /* MyPostCell.swift */; };
 		3F4EF7EC2872DCDA00903325 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF7EB2872DCDA00903325 /* KeyChain.swift */; };
 		3F4EF7F62874280A00903325 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF7F52874280A00903325 /* TokenModel.swift */; };
 		3F536A85287ED47300287C1D /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F536A84287ED47300287C1D /* DetailPostModel.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		213A93BDD08EAF1CCF47B787 /* Pods-DaemaIntheSoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaemaIntheSoop.release.xcconfig"; path = "Target Support Files/Pods-DaemaIntheSoop/Pods-DaemaIntheSoop.release.xcconfig"; sourceTree = "<group>"; };
+		3F3CD2B82883087100599190 /* MyPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCell.swift; sourceTree = "<group>"; };
 		3F4EF7EB2872DCDA00903325 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		3F4EF7F52874280A00903325 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		3F536A84287ED47300287C1D /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				3F92E6E2285C041B00FCB5EC /* PostListCell.swift */,
+				3F3CD2B82883087100599190 /* MyPostCell.swift */,
 			);
 			path = TableVIewCell;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				3F92E6DE285B43EA00FCB5EC /* NewPostVC.swift in Sources */,
 				3F92E6AC285AD15F00FCB5EC /* ViewController.swift in Sources */,
 				3F92E6A8285AD15F00FCB5EC /* AppDelegate.swift in Sources */,
+				3F3CD2B92883087100599190 /* MyPostCell.swift in Sources */,
 				3F92E6D5285B33F800FCB5EC /* LogInVC.swift in Sources */,
 				3F536A85287ED47300287C1D /* DetailPostModel.swift in Sources */,
 				3F92E6E3285C041B00FCB5EC /* PostListCell.swift in Sources */,
