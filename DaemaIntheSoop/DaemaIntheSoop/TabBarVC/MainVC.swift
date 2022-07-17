@@ -25,6 +25,8 @@ class MainVC: UIViewController {
         refreshControl.endRefreshing() // 초기화 - refresh 종료
         listTableView.refreshControl = refreshControl
         
+        listTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
+        
 //        let refreshLoading = PublishRelay<Bool>() // ViewModel에 있다고 가정
 //        refreshControl.rx.controlEvent(.valueChanged)
 //            .bind(onNext: { [weak self] _ in
@@ -38,6 +40,7 @@ class MainVC: UIViewController {
         
         getPostList()
     }
+    
     
     private func getPostList() {
         AF.request("http://35.216.6.254:8080/board/all", method: .get)
