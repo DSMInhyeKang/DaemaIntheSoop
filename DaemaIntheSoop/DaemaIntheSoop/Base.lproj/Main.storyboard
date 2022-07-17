@@ -638,15 +638,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnLogOut" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw1-Hq-him">
-                                <rect key="frame" x="291.5" y="118" width="72.5" height="31"/>
+                                <rect key="frame" x="291.5" y="138" width="72.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                 <connections>
                                     <action selector="btnLogOut:" destination="u39-4i-eLr" eventType="touchUpInside" id="8b3-wU-WUG"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-qP-bX0">
-                                <rect key="frame" x="0.0" y="288" width="414" height="525"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-qP-bX0">
+                                <rect key="frame" x="0.0" y="388" width="414" height="425"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myListCell" rowHeight="55" id="GUn-LA-8Rg" customClass="MyPostCell" customModule="DaemaIntheSoop" customModuleProvider="target">
@@ -674,16 +674,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 글 목록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzt-iu-YuD">
+                                <rect key="frame" x="30" y="348" width="354" height="40"/>
+                                <color key="backgroundColor" red="0.94446417297979801" green="0.94446417297979801" blue="0.94446417297979801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YZ2-lP-8OE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j9J-Po-ueB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="l2G-qP-bX0" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="200" id="2aQ-Ku-JLL"/>
+                            <constraint firstItem="l2G-qP-bX0" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="300" id="2aQ-Ku-JLL"/>
+                            <constraint firstItem="Jzt-iu-YuD" firstAttribute="leading" secondItem="j9J-Po-ueB" secondAttribute="leading" constant="30" id="8eP-v2-hc1"/>
                             <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="Rw1-Hq-him" secondAttribute="trailing" constant="50" id="DNV-03-iDU"/>
+                            <constraint firstItem="l2G-qP-bX0" firstAttribute="top" secondItem="Jzt-iu-YuD" secondAttribute="bottom" id="Vfx-uu-NqK"/>
                             <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="l2G-qP-bX0" secondAttribute="trailing" id="dLW-fh-EVW"/>
+                            <constraint firstItem="j9J-Po-ueB" firstAttribute="trailing" secondItem="Jzt-iu-YuD" secondAttribute="trailing" constant="30" id="k1S-k5-9zb"/>
                             <constraint firstItem="j9J-Po-ueB" firstAttribute="bottom" secondItem="l2G-qP-bX0" secondAttribute="bottom" id="slb-Kt-iGo"/>
                             <constraint firstItem="l2G-qP-bX0" firstAttribute="leading" secondItem="j9J-Po-ueB" secondAttribute="leading" id="t6y-oT-DdK"/>
-                            <constraint firstItem="Rw1-Hq-him" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="30" id="ysn-NS-IVm"/>
+                            <constraint firstItem="Rw1-Hq-him" firstAttribute="top" secondItem="j9J-Po-ueB" secondAttribute="top" constant="50" id="ysn-NS-IVm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1V8-wG-uKT"/>
