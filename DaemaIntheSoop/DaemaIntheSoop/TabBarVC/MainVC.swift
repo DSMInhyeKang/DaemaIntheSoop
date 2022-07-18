@@ -23,8 +23,10 @@ class MainVC: UIViewController {
         listTableView.dataSource = self
         
         refreshControl.endRefreshing() // 초기화 - refresh 종료
-        listTableView.refreshControl = refreshControl
+        listTableView.refreshControl = UIRefreshControl()
         
+        listTableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+    
         listTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
         
 //        let refreshLoading = PublishRelay<Bool>() // ViewModel에 있다고 가정
@@ -40,6 +42,12 @@ class MainVC: UIViewController {
         
         getPostList()
     }
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        getPostList()
+    }
+    
+    
     
     
     private func getPostList() {
