@@ -15,12 +15,23 @@ class LogInVC: UIViewController {
         signin()
     }
     
+    let autoSignIn: Bool = true
+    
+    let myUserDefaults = UserDefaults.standard
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let button = UIButton(type: .custom)
         button.layer.cornerRadius = button.frame.width/2
         button.clipsToBounds = true
+        
+//        autoSignIn.true = myUserDefaults.bool(forKey: <#T##String#>)
     }
     
     private func signin() {
