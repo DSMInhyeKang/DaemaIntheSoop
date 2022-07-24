@@ -67,7 +67,6 @@ class MyPageVC: UIViewController {
 
 
 extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
@@ -76,5 +75,14 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myListCell", for: indexPath) as! MyPostCell
         cell.lbMyPostTitle.text = "\(model[indexPath.row].title)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myPostsTableView.deselectRow(at: indexPath, animated: true)
+        guard let myPost = self.storyboard?.instantiateViewController(withIdentifier: "MyDetailVC") as? MyDetailVC else { return }
+        myPost.myPostTitle = "\(model[indexPath.row].title)"
+        myPost.myPostContent = "\(model[indexPath.row].content)"
+        myPost.myID = model[indexPath.row].id
+        navigationController?.pushViewController(myPost, animated: true)
     }
 }
