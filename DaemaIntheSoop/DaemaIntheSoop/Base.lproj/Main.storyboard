@@ -645,7 +645,7 @@
                                     <action selector="btnLogOut:" destination="u39-4i-eLr" eventType="touchUpInside" id="8b3-wU-WUG"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-qP-bX0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l2G-qP-bX0">
                                 <rect key="frame" x="0.0" y="388" width="414" height="425"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -711,7 +711,7 @@
         <!--MyDetailVC-->
         <scene sceneID="EPy-zN-sAI">
             <objects>
-                <viewController storyboardIdentifier="MyDetailVC" title="MyDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a6F-yU-maD" customClass="MyDetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyDetailVC" title="MyDetailVC" id="a6F-yU-maD" customClass="MyDetailVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MpA-Cy-ToQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -723,7 +723,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-K8-y1a">
-                                <rect key="frame" x="43" y="145" width="331" height="687"/>
+                                <rect key="frame" x="40" y="145" width="334" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -733,7 +733,7 @@
                         <viewLayoutGuide key="safeArea" id="Ppd-tq-lye"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nOe-K8-y1a" firstAttribute="leading" secondItem="Ppd-tq-lye" secondAttribute="leading" constant="43" id="PAX-Bk-XUT"/>
+                            <constraint firstItem="nOe-K8-y1a" firstAttribute="leading" secondItem="Ppd-tq-lye" secondAttribute="leading" constant="40" id="PAX-Bk-XUT"/>
                             <constraint firstItem="Ppd-tq-lye" firstAttribute="trailing" secondItem="dqm-Zq-TIr" secondAttribute="trailing" constant="50" id="cvp-g2-PGN"/>
                             <constraint firstItem="dqm-Zq-TIr" firstAttribute="leading" secondItem="Ppd-tq-lye" secondAttribute="leading" constant="45" id="dD4-Qn-x90"/>
                             <constraint firstItem="dqm-Zq-TIr" firstAttribute="top" secondItem="Ppd-tq-lye" secondAttribute="top" constant="45" id="dJb-l3-MNC"/>
