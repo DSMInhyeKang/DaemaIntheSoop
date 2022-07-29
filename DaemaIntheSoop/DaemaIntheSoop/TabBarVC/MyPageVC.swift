@@ -61,7 +61,7 @@ class MyPageVC: UIViewController {
                 case .failure(let error):
                     print(error)
                 }
-            }
+        }
     }
 }
 
