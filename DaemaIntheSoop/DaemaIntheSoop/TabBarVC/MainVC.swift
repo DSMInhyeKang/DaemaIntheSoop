@@ -21,11 +21,6 @@ class MainVC: UIViewController {
 
         listTableView.delegate = self
         listTableView.dataSource = self
-        
-        refreshControl.endRefreshing() // 초기화 - refresh 종료
-        listTableView.refreshControl = UIRefreshControl()
-        
-        listTableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     
         listTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
         
@@ -45,6 +40,8 @@ class MainVC: UIViewController {
     
     @objc func pullToRefresh(_ sender: Any) {
         getPostList()
+        
+        refreshControl.endRefreshing() // 초기화 - refresh 종료
     }
     
     
@@ -62,10 +59,18 @@ class MainVC: UIViewController {
                         DispatchQueue.main.async {
                             self.result = data.content
                             self.listTableView.reloadData()
+                            
+                            self.listTableView.refreshControl = UIRefreshControl()
+                            self.listTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+                            self.refreshControl.endRefreshing() // 초기화 - refresh 종료
                         }
                     }
                 case .failure(let error):
                     print(error)
+                    
+                    self.listTableView.refreshControl = UIRefreshControl()
+                    self.listTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+                    self.refreshControl.endRefreshing() // 초기화 - refresh 종료
                 }
             }
     }
