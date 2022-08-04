@@ -15,18 +15,18 @@ class LogInVC: UIViewController {
         signin()
     }
     
+    @IBOutlet weak var passwordEyeBtn: UIButton!
+    
     let autoSignIn: Bool = true
     
     let myUserDefaults = UserDefaults.standard
     
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let button = UIButton(type: .custom)
         button.layer.cornerRadius = button.frame.width/2
         button.clipsToBounds = true
@@ -34,8 +34,20 @@ class LogInVC: UIViewController {
 //        autoSignIn.true = myUserDefaults.bool(forKey: <#T##String#>)
     }
     
+    @IBAction func passwordEyeBtnDidTap(_ sender: Any) {
+        // 보안 설정 반전
+        txtFieldPW.isSecureTextEntry.toggle()
+        // 버튼 선택 상태 반전
+        passwordEyeBtn.isSelected.toggle()
+        // 버튼 선택 상태에 따른 눈 모양 이미지 변경
+        let eyeImage = passwordEyeBtn.isSelected ? "password shown eye icon" : "password hidden eye icon"
+        passwordEyeBtn.setImage(UIImage(named: eyeImage), for: .normal)
+        // 버튼 선택된 경우 자동으로 들어가는 틴트 컬러를 투명으로 변경해줌
+        passwordEyeBtn.tintColor = .clear
+    }
+    
     private func signin() {
-        let url = "http://35.216.6.254:8080/login"
+        let url = "http://52.5.10.3:8080/login"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
