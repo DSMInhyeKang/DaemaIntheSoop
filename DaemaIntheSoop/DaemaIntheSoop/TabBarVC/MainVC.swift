@@ -18,25 +18,18 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         listTableView.delegate = self
         listTableView.dataSource = self
     
         listTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
         
-//        let refreshLoading = PublishRelay<Bool>() // ViewModel에 있다고 가정
-//        refreshControl.rx.controlEvent(.valueChanged)
-//            .bind(onNext: { [weak self] _ in
-//                // viewModel.updateDataSource()
-//
-//                // 아래코드: viewModel에서 발생한다고 가정
-//                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3) { [weak self] in
-//                    self?.refreshLoading.accept(true) // viewModel에서 dataSource업데이트 끝난 경우
-//                }
-//            }).disposed(by: bag)
-        
         getPostList()
     }
+    
     
     @objc func pullToRefresh(_ sender: Any) {
         getPostList()
@@ -46,9 +39,8 @@ class MainVC: UIViewController {
     
     
     
-    
     private func getPostList() {
-        AF.request("http://35.216.6.254:8080/board/all", method: .get)
+        AF.request("http://52.5.10.3:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
             .responseData {
                 response in switch response.result {
@@ -65,6 +57,8 @@ class MainVC: UIViewController {
                             self.refreshControl.endRefreshing() // 초기화 - refresh 종료
                         }
                     }
+                    
+                    
                 case .failure(let error):
                     print(error)
                     
@@ -75,6 +69,8 @@ class MainVC: UIViewController {
             }
     }
 }
+
+
 
 extension MainVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,9 +90,6 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         view.postTitle = "\(result[indexPath.row].title)"
         view.postWriter = "\(result[indexPath.row].username)"
         view.txt = "\(result[indexPath.row].content)"
-//        view.indexList = indexList
-//        view.indexValue = indexPath.row
-        view.id = result[indexPath.row].id
         navigationController?.pushViewController(view, animated: true)
     }
 }

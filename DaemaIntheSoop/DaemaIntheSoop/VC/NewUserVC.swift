@@ -25,7 +25,7 @@ class NewUserVC: UIViewController {
         let txtFieldUsername = self.txtFieldUsername.text
 
         
-        let url = "http://35.216.6.254:8080/register"
+        let url = "http://52.5.10.3:8080/register"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -55,7 +55,7 @@ class NewUserVC: UIViewController {
     
     
     @IBAction func btnNewUser(_ sender: Any) {
-        let url = "http://35.216.6.254:8080/register"
+        let url = "http://52.5.10.3:8080/register"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

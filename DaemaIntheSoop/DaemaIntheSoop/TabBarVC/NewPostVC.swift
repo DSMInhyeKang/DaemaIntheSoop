@@ -23,7 +23,7 @@ class NewPostVC: UIViewController {
         
         
         //전송할 값
-        let url = "http://35.216.6.254:8080/board"
+        let url = "http://52.5.10.3:8080/board"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -56,7 +56,10 @@ class NewPostVC: UIViewController {
                 
                 successOnAlert.addAction(onAction)
                 self.present(successOnAlert, animated: true, completion: nil)
-        
+                
+                self.txtFieldNewTitle.text = nil
+                self.txtViewNewContent.text = nil
+                
                 
             case .failure(let error):
                 print(error)
@@ -65,6 +68,9 @@ class NewPostVC: UIViewController {
                 
                 failOnAlert.addAction(onAction)
                 self.present(failOnAlert, animated: true, completion: nil)
+                
+                self.txtFieldNewTitle.text = nil
+                self.txtViewNewContent.text = nil
             }
         }
     }
