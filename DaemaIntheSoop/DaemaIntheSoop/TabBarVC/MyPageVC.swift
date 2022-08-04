@@ -13,6 +13,10 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var myPostsTableView: UITableView!
     @IBOutlet weak var lbMyName: UILabel!
     @IBOutlet weak var lbMyUsername: UILabel!
+    @IBOutlet weak var txtFieldReviseName: UITextField!
+    @IBOutlet weak var txtFieldCurrentPW: UITextField!
+    @IBOutlet weak var txtFieldRevisePW: UITextField!
+    
     
     var model = MainPostModel()
     var userModel = UserInfoModel()
@@ -24,15 +28,21 @@ class MyPageVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getUserInfo()
         
         myPostsTableView.delegate = self
         myPostsTableView.dataSource = self
         
         myPostsTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
-        
-        getUserInfo()
+   
         getMyPosts()
     }
+    
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        getMyPosts()
+    }
+    
     
     @IBAction func btnLogOut(_ sender: Any) {
         guard let signOut = self.storyboard?.instantiateViewController(identifier: "LogInVC") as? LogInVC else { return }
@@ -41,10 +51,106 @@ class MyPageVC: UIViewController {
         self.present(signOut, animated: true, completion: nil)
     }
     
-    
-    @objc func pullToRefresh(_ sender: Any) {
-        getMyPosts()
+
+    @IBAction func btnReviseName(_ sender: UIButton) {
+        let txtFieldReviseName = self.txtFieldReviseName.text
+        
+        let url = "http://52.5.10.3:8080/user/name"
+        var request = URLRequest(url: URL(string: url)!)
+        request.method = .patch
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
+        
+        let params = ["name" : txtFieldReviseName!] as Dictionary
+        
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request).response { (response) in
+            print(response.request ?? "")
+            switch response.result {
+            case .success:
+                debugPrint(response)
+                let successOnAlert = UIAlertController(title: "안내", message: "수정 성공", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "닫기", style: UIAlertAction.Style.default, handler: nil)
+                successOnAlert.addAction(onAction)
+                self.present(successOnAlert, animated: true, completion: nil)
+                
+                self.txtFieldReviseName.text = nil
+                
+                
+            case .failure(let error):
+                print(error)
+                
+                let successOnAlert = UIAlertController(title: "안내", message: "수정 실패", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "닫기", style: UIAlertAction.Style.default, handler: nil)
+                successOnAlert.addAction(onAction)
+                self.present(successOnAlert, animated: true, completion: nil)
+                
+                self.txtFieldReviseName.text = nil
+            }
+            
+        }
+        
     }
+    
+    @IBAction func btnRevisePW(_ sender: UIButton) {
+        let txtFieldRevisePW = self.txtFieldRevisePW.text
+        let txtFieldCurrentPW = self.txtFieldCurrentPW.text
+        
+        let url = "http://52.5.10.3:8080/user/password"
+        var request = URLRequest(url: URL(string: url)!)
+        request.method = .patch
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
+        
+        let params = [
+            "currentPassword" : txtFieldCurrentPW!,
+            "password" : txtFieldRevisePW!
+        ] as Dictionary
+        
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request).response { (response) in
+            print(response.request ?? "")
+            switch response.result {
+            case .success:
+                debugPrint(response)
+                let successOnAlert = UIAlertController(title: "안내", message: "수정 성공", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "닫기", style: UIAlertAction.Style.default, handler: nil)
+                successOnAlert.addAction(onAction)
+                self.present(successOnAlert, animated: true, completion: nil)
+                
+                self.txtFieldCurrentPW.text = nil
+                self.txtFieldRevisePW.text = nil
+                
+                
+            case .failure(let error):
+                print(error)
+                
+                let successOnAlert = UIAlertController(title: "안내", message: "수정 실패", preferredStyle: UIAlertController.Style.alert)
+                let onAction = UIAlertAction(title: "닫기", style: UIAlertAction.Style.default, handler: nil)
+                successOnAlert.addAction(onAction)
+                self.present(successOnAlert, animated: true, completion: nil)
+                
+                self.txtFieldCurrentPW.text = nil
+                self.txtFieldRevisePW.text = nil
+            }
+            
+        }
+    }
+    
     
     
     private func getMyPosts() {
