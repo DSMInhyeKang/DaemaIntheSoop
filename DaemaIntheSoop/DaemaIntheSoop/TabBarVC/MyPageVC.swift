@@ -15,6 +15,7 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var lbMyUsername: UILabel!
     
     var model = MainPostModel()
+    var userModel = UserInfoModel()
     
     let myRefreshControl = UIRefreshControl()
     
@@ -27,8 +28,9 @@ class MyPageVC: UIViewController {
         myPostsTableView.delegate = self
         myPostsTableView.dataSource = self
         
-        myPostsTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
+        myPostsTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
         
+        getUserInfo()
         getMyPosts()
     }
     
@@ -45,7 +47,6 @@ class MyPageVC: UIViewController {
     }
     
     
-    
     private func getMyPosts() {
         let url = "http://52.5.10.3:8080/board"
         var request = URLRequest(url: URL(string: url)!)
@@ -53,11 +54,9 @@ class MyPageVC: UIViewController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 //        request.timeoutInterval = 10
         
-        
 //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
-        
         
         AF.request(request).response { (response) in switch response.result {
                 case .success:
@@ -80,6 +79,37 @@ class MyPageVC: UIViewController {
                     self.myPostsTableView.refreshControl = UIRefreshControl()
                     self.myPostsTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
                     self.myRefreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    private func getUserInfo() {
+        let url = "http://52.5.10.3:8080/user"
+        var request = URLRequest(url: URL(string: url)!)
+        request.method = .get
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.timeoutInterval = 10
+        
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
+        
+        AF.request(request).response { (response) in switch response.result {
+                case .success:
+                    debugPrint(response)
+            
+                    if let data = try? JSONDecoder().decode(UserInfoModel.self, from: response.data!){
+                        DispatchQueue.main.async {
+                            self.userModel = data
+                            
+                            self.lbMyName.text = "\(self.userModel.name)"
+                            self.lbMyUsername.text = "\(self.userModel.username)"
+                        }
+                    }
+            
+            
+                case .failure(let error):
+                    print(error)
             }
         }
     }
