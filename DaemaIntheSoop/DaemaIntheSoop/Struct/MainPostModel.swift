@@ -8,13 +8,13 @@
 import Foundation
 
 struct MainPostModel: Codable {
-    let content: [Content]
+    var content = [Content]()
 }
 
 struct Content: Codable {
-    var id: Int
-    var username: String
-    var title: String
-    var content: String
-    var comments: [String]
+    var id: Int = .init()
+    var username: String = .init()
+    var title: String = .init()
+    var content: String = .init()
+    var comments: [String] = .init()
 }
