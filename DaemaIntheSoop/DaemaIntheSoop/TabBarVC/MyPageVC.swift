@@ -11,11 +11,19 @@ import Alamofire
 class MyPageVC: UIViewController {
     
     @IBOutlet weak var myPostsTableView: UITableView!
+    @IBOutlet weak var lbMyName: UILabel!
+    @IBOutlet weak var lbMyUsername: UILabel!
     
-    var model: [Content] = []
+    var model = MainPostModel()
+    
+    let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         myPostsTableView.delegate = self
         myPostsTableView.dataSource = self
         
@@ -23,8 +31,6 @@ class MyPageVC: UIViewController {
         
         getMyPosts()
     }
-    
-    
     
     @IBAction func btnLogOut(_ sender: Any) {
         guard let signOut = self.storyboard?.instantiateViewController(identifier: "LogInVC") as? LogInVC else { return }
@@ -34,9 +40,14 @@ class MyPageVC: UIViewController {
     }
     
     
+    @objc func pullToRefresh(_ sender: Any) {
+        getMyPosts()
+    }
+    
+    
+    
     private func getMyPosts() {
-        
-        let url = "http://35.216.6.254:8080/board"
+        let url = "http://52.5.10.3:8080/board"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .get
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -54,35 +65,48 @@ class MyPageVC: UIViewController {
             
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
                         DispatchQueue.main.async {
-                            self.model = data.content
+                            self.model = data
                             self.myPostsTableView.reloadData()
+                            
+                            self.myPostsTableView.refreshControl = UIRefreshControl()
+                            self.myPostsTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+                            self.myRefreshControl.endRefreshing()
                         }
                     }
+            
+            
                 case .failure(let error):
                     print(error)
-                }
+                    self.myPostsTableView.refreshControl = UIRefreshControl()
+                    self.myPostsTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
+                    self.myRefreshControl.endRefreshing()
+            }
         }
     }
+    
 }
 
 
 extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return model.content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "myListCell", for: indexPath) as! MyPostCell
-        myCell.lbMyPostTitle.text = "\(model[indexPath.row].title)"
+        myCell.lbMyPostTitle.text = "\(model.content[indexPath.row].title)"
+        
+//        lbMyName.text = "\(model.content.)"
+        
         return myCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myPostsTableView.deselectRow(at: indexPath, animated: true)
         guard let myPost = self.storyboard?.instantiateViewController(withIdentifier: "MyDetailVC") as? MyDetailVC else { return }
-        myPost.myPostTitle = "\(model[indexPath.row].title)"
-        myPost.myPostContent = "\(model[indexPath.row].content)"
-        myPost.myID = model[indexPath.row].id
+        myPost.myPostTitle = "\(model.content[indexPath.row].title)"
+        myPost.myPostContent = "\(model.content[indexPath.row].content)"
+        myPost.myID = model.content[indexPath.row].id
         navigationController?.pushViewController(myPost, animated: true)
     }
 }
