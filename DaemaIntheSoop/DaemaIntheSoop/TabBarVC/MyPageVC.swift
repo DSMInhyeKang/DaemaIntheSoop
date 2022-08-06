@@ -82,7 +82,7 @@ class MyPageVC: UIViewController {
                 self.present(successOnAlert, animated: true, completion: nil)
                 
                 self.txtFieldReviseName.text = nil
-                
+                self.lbMyName.text = self.userModel.name
                 
             case .failure(let error):
                 print(error)
