@@ -13,6 +13,7 @@ class MainVC: UIViewController {
     let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var listTableView: UITableView!
+
     
     var result: [Content] = []
     
@@ -21,11 +22,10 @@ class MainVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         listTableView.delegate = self
         listTableView.dataSource = self
     
-        listTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 20)
+        listTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
         
         getPostList()
     }
@@ -38,14 +38,12 @@ class MainVC: UIViewController {
     }
     
     
-    
     private func getPostList() {
         AF.request("http://52.5.10.3:8080/board/all", method: .get)
             .validate(statusCode: 200..<500)
             .responseData {
                 response in switch response.result {
                 case .success:
-//                    print(response.result)
                     debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
                         DispatchQueue.main.async {
@@ -54,7 +52,7 @@ class MainVC: UIViewController {
                             
                             self.listTableView.refreshControl = UIRefreshControl()
                             self.listTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
-                            self.refreshControl.endRefreshing() // 초기화 - refresh 종료
+                            self.refreshControl.endRefreshing()
                         }
                     }
                     
@@ -64,10 +62,12 @@ class MainVC: UIViewController {
                     
                     self.listTableView.refreshControl = UIRefreshControl()
                     self.listTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
-                    self.refreshControl.endRefreshing() // 초기화 - refresh 종료
-                }
+                    self.refreshControl.endRefreshing()
             }
+        }
     }
+    
+    
 }
 
 
@@ -90,6 +90,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         view.postTitle = "\(result[indexPath.row].title)"
         view.postWriter = "\(result[indexPath.row].username)"
         view.txt = "\(result[indexPath.row].content)"
+        view.postID = result[indexPath.row].id
         navigationController?.pushViewController(view, animated: true)
     }
 }
