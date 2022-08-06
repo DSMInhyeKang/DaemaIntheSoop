@@ -59,7 +59,7 @@ class ReviseVC: UIViewController {
             case .success:
                 debugPrint(response)
                 let successOnAlert = UIAlertController(title: "안내", message: "게시글 수정 완료", preferredStyle: UIAlertController.Style.alert)
-                let onAction = UIAlertAction(title: "홈 화면으로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
+                let onAction = UIAlertAction(title: "마이페이지로 돌아가기", style: UIAlertAction.Style.default, handler: nil)
                 
                 successOnAlert.addAction(onAction)
                 self.present(successOnAlert, animated: true, completion: nil)
@@ -90,9 +90,7 @@ class ReviseVC: UIViewController {
         request.method = .delete
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.timeoutInterval = 10
-        
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
