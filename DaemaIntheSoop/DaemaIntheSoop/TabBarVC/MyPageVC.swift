@@ -232,8 +232,6 @@ extension MyPageVC: UITableViewDelegate, UITableViewDataSource {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "myListCell", for: indexPath) as! MyPostCell
         myCell.lbMyPostTitle.text = "\(model.content[indexPath.row].title)"
         
-//        lbMyName.text = "\(model.content.)"
-        
         return myCell
     }
     

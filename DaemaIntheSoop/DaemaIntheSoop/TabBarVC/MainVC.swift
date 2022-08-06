@@ -91,6 +91,7 @@ extension MainVC: UITableViewDataSource, UITableViewDelegate {
         view.postWriter = "\(result[indexPath.row].username)"
         view.txt = "\(result[indexPath.row].content)"
         view.postID = result[indexPath.row].id
+        
         navigationController?.pushViewController(view, animated: true)
     }
 }
