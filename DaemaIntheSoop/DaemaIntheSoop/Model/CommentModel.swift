@@ -8,5 +8,10 @@
 import Foundation
 
 struct CommentModel: Codable {
+    var contents = [Reply]()
+}
+
+struct Reply: Codable {
+    var username: String = .init()
     var comment: String = .init()
 }
