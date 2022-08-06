@@ -16,5 +16,4 @@ struct Content: Codable {
     var username: String = .init()
     var title: String = .init()
     var content: String = .init()
-    var comments: [String] = .init()
 }
