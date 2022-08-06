@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct CommentModel: Codable {
+    var comment: String = .init()
+}
