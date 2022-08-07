@@ -28,8 +28,8 @@ class MainVC: UIViewController {
         listTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
         
         getPostList()
+        
     }
-    
     
     @objc func pullToRefresh(_ sender: Any) {
         getPostList()
