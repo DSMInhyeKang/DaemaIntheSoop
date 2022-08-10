@@ -8,7 +8,7 @@
 import Foundation
 
 struct CommentModel: Codable {
-    var contents = [Reply]()
+    var content = [Reply]()
 }
 
 struct Reply: Codable {

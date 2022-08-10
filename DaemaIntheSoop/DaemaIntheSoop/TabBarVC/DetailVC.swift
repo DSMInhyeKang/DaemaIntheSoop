@@ -115,6 +115,8 @@ class DetailVC: UIViewController {
                 self.present(successOnAlert, animated: true, completion: nil)
                 
                 self.txtFieldComment.text = nil
+               
+                self.getComments()
                 
                 
             case .failure(let error):
@@ -126,6 +128,8 @@ class DetailVC: UIViewController {
                 self.present(successOnAlert, animated: true, completion: nil)
                 
                 self.txtFieldComment.text = nil
+               
+                self.getComments()
             }
             
         }
@@ -135,13 +139,13 @@ class DetailVC: UIViewController {
 
 extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.contents.count
+        return model.content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentCell
-        cell.lbUser.text = "\(model.contents[indexPath.row].username)"
-        cell.lbComment.text = "\(model.contents[indexPath.row].comment)"
+        cell.lbUser.text = "\(model.content[indexPath.row].username)"
+        cell.lbComment.text = "\(model.content[indexPath.row].comment)"
         
         print(cell.lbUser.text!)
         print(cell.lbComment.text!)
