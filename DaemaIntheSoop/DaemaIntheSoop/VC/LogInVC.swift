@@ -30,8 +30,6 @@ class LogInVC: UIViewController {
         let button = UIButton(type: .custom)
         button.layer.cornerRadius = button.frame.width/2
         button.clipsToBounds = true
-        
-//        autoSignIn.true = myUserDefaults.bool(forKey: <#T##String#>)
     }
     
     @IBAction func passwordEyeBtnDidTap(_ sender: Any) {
@@ -93,5 +91,3 @@ class LogInVC: UIViewController {
         }
     }
 }
-
-

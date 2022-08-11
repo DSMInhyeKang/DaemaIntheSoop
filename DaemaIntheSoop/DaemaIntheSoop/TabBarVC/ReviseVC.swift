@@ -28,8 +28,7 @@ class ReviseVC: UIViewController {
         let txtFieldReviseTitle = self.txtFieldReviseTitle.text
         let txtViewReviseContent = self.txtViewReviseContent.text
         
-        
-        //전송할 값
+
         let url = "http://52.5.10.3:8080/board/\(id)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .patch
@@ -84,7 +83,6 @@ class ReviseVC: UIViewController {
     
     
     @IBAction func btnMyPostDelete(_ sender: UIButton) {
-        //전송할 값
         let url = "http://52.5.10.3:8080/board/\(id)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .delete
