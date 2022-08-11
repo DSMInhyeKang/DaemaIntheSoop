@@ -296,7 +296,7 @@
                                 <rect key="frame" x="0.0" y="605" width="414" height="257"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCommentCell" rowHeight="60" id="E1a-XH-YVe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCommentCell" rowHeight="60" id="E1a-XH-YVe" customClass="MyCommentCell" customModule="DaemaIntheSoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E1a-XH-YVe" id="2qJ-cw-Au5">
@@ -308,13 +308,34 @@
                                                     <color key="tintColor" red="0.270588249" green="0.270588249" blue="0.67058825489999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="익명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zg8-L6-rWi">
+                                                    <rect key="frame" x="85" y="11" width="26" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXt-D2-yW1">
+                                                    <rect key="frame" x="85" y="32" width="61" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zXt-D2-yW1" firstAttribute="bottom" secondItem="2qJ-cw-Au5" secondAttribute="bottomMargin" id="D9p-kq-aNH"/>
                                                 <constraint firstItem="UA1-OY-0w7" firstAttribute="leading" secondItem="2qJ-cw-Au5" secondAttribute="leadingMargin" constant="10" id="DkU-Om-NUT"/>
+                                                <constraint firstItem="zXt-D2-yW1" firstAttribute="leading" secondItem="UA1-OY-0w7" secondAttribute="trailing" constant="20" id="I81-Jb-qXB"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="UA1-OY-0w7" secondAttribute="bottom" id="QDr-xy-7zX"/>
+                                                <constraint firstItem="Zg8-L6-rWi" firstAttribute="top" secondItem="2qJ-cw-Au5" secondAttribute="topMargin" id="b8m-d7-ohG"/>
+                                                <constraint firstItem="Zg8-L6-rWi" firstAttribute="leading" secondItem="UA1-OY-0w7" secondAttribute="trailing" constant="20" id="fY6-nW-tlJ"/>
                                                 <constraint firstItem="UA1-OY-0w7" firstAttribute="top" secondItem="2qJ-cw-Au5" secondAttribute="topMargin" id="tIM-OF-pYw"/>
+                                                <constraint firstItem="zXt-D2-yW1" firstAttribute="top" secondItem="Zg8-L6-rWi" secondAttribute="bottom" constant="3" id="zx7-Yf-Yce"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbMyComment" destination="zXt-D2-yW1" id="vwf-Va-2Ud"/>
+                                            <outlet property="lbMyUser" destination="Zg8-L6-rWi" id="roW-17-rXd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -336,6 +357,9 @@
                                 <buttonConfiguration key="configuration" style="filled" image="paperplane" catalog="system">
                                     <color key="baseBackgroundColor" name="ThemeColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnSendComment:" destination="LCv-uI-ce7" eventType="touchUpInside" id="8l0-fu-YN2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7mG-6a-dr2"/>
@@ -366,7 +390,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="F9E-AF-OW5"/>
                     <connections>
+                        <outlet property="commentTableView" destination="xZw-G8-K8g" id="l4Z-Gf-q7G"/>
                         <outlet property="lbMyPostTitle" destination="YQ9-cC-plt" id="QLc-BQ-Vj7"/>
+                        <outlet property="txtFieldComment" destination="Ck4-2j-rna" id="Yss-fp-tZW"/>
                         <outlet property="txtViewMyPostContent" destination="5Au-VM-LZS" id="awu-KN-sxN"/>
                     </connections>
                 </viewController>
