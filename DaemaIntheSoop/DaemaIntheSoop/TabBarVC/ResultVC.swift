@@ -18,6 +18,7 @@ class ResultVC: UIViewController {
     
     let refreshControl = UIRefreshControl()
     var model = CommentModel()
+    var result = Content()
     
     var postTitle: String = ""
     var postWriter: String = ""
@@ -27,18 +28,20 @@ class ResultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("thisiswhatIprint")
+        print(postID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
         tableViewComment.delegate = self
         tableViewComment.dataSource = self
     
         tableViewComment.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
         
+        getPost()
         getComments()
-        lbTitle.text = "\(postTitle)"
-        lbUser.text = "\(postWriter)"
-        txtViewContent.text = "\(txt)"
     }
     
     
@@ -48,6 +51,35 @@ class ResultVC: UIViewController {
         refreshControl.endRefreshing()
     }
 
+    
+    private func getPost() {
+        let url = "http://52.5.10.3:8080/board/\(postID)"
+        var request = URLRequest(url: URL(string: url)!)
+        request.method = .get
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
+        
+        AF.request(request).response { (response) in switch response.result {
+                case .success:
+                    debugPrint(response)
+            
+                    if let data = try? JSONDecoder().decode(Content.self, from: response.data!){
+                        DispatchQueue.main.async {
+                            self.result = data
+                            
+                            self.lbTitle.text = "\(self.result.title)"
+                            self.lbUser.text = "\(self.result.username)"
+                            self.txtViewContent.text = "\(self.result.content)"
+                        }
+                    }
+            
+            
+                case .failure(let error):
+                    print(error)
+            }
+        }
+    }
     
     private func getComments() {
         let url = "http://52.5.10.3:8080/board/\(postID)/comment"

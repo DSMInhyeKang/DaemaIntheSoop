@@ -9,4 +9,5 @@ import Foundation
 
 struct SearchModel: Codable {
     var arrSearch: Array<String> = .init()
+    var arrID: Array<Int> = .init()
 }
