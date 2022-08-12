@@ -13,33 +13,36 @@ class SearchVC: UIViewController {
 
     var searchList =  SearchModel()
     var result: [Content] = []
-    
+
     var arr: Array<String> = []
     var filteredArr: [String] = []
     
-    var id: Int = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = UIColor(named: "NoticeColor")
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 30, weight: .bold), 
+            .foregroundColor: UIColor(named: "NoticeColor") ?? ""
+        ]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupSearchController()
+        self.setupTableView()
+    
+        searchTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
+        
+        getPostList()
+    }
+  
     
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
         let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && isSearchBarHasText
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.setupSearchController()
-        self.setupTableView()
-        
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
-    
-        searchTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
-        
-        getPostList()
     }
     
     
@@ -78,6 +81,7 @@ class SearchVC: UIViewController {
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "Search"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "NoticeColor")!]
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
@@ -102,6 +106,17 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchTableView.deselectRow(at: indexPath, animated: true)
+        guard let view = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
+        view.postTitle = "\(result[indexPath.row].title)"
+        view.postWriter = "\(result[indexPath.row].username)"
+        view.txt = "\(result[indexPath.row].content)"
+        view.postID = result[indexPath.row].id
+
+        navigationController?.pushViewController(view, animated: true)
     }
 }
 
