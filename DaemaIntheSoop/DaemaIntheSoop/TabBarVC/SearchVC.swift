@@ -15,20 +15,22 @@ class SearchVC: UIViewController {
     var result: [Content] = []
 
     var arr: Array<String> = []
+    var idArr: Array<Int> = []
     var filteredArr: [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = UIColor(named: "NoticeColor")
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
-            .font: UIFont.systemFont(ofSize: 30, weight: .bold), 
-            .foregroundColor: UIColor(named: "NoticeColor") ?? ""
-        ]
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = UIColor(named: "NoticeColor")
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 30, weight: .bold),
+            .foregroundColor: UIColor(named: "NoticeColor") ?? ""
+        ]
+
         self.setupSearchController()
         self.setupTableView()
     
@@ -62,6 +64,10 @@ class SearchVC: UIViewController {
                             self.searchList.arrSearch = self.result.map { $0.title }
                             self.arr = searchList.arrSearch
                             print(arr)
+                            
+                            self.searchList.arrID = self.result.map { $0.id }
+                            self.idArr = searchList.arrID
+                            print(idArr)
                         }
                     }
                     
@@ -111,11 +117,13 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchTableView.deselectRow(at: indexPath, animated: true)
         guard let view = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
-        view.postTitle = "\(result[indexPath.row].title)"
-        view.postWriter = "\(result[indexPath.row].username)"
-        view.txt = "\(result[indexPath.row].content)"
-        view.postID = result[indexPath.row].id
-
+//        view.postTitle = "\(result[indexPath.row].title)"
+//        view.postWriter = "\(result[indexPath.row].username)"
+//        view.txt = "\(result[indexPath.row].content)"
+//        view.postID = result[indexPath.row].id
+        view.postID = idArr[indexPath.row]
+        print(view.postID)
+        
         navigationController?.pushViewController(view, animated: true)
     }
 }
