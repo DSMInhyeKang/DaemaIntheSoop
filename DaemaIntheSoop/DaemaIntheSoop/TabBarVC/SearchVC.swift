@@ -9,15 +9,15 @@ import UIKit
 import Alamofire
 
 class SearchVC: UIViewController {
-    
     @IBOutlet weak var searchTableView: UITableView!
 
-    let refreshControl = UIRefreshControl()
-    
+    var searchList =  SearchModel()
     var result: [Content] = []
-    var arr: [String] = []
     
+    var arr: Array<String> = []
     var filteredArr: [String] = []
+    
+    var id: Int = 0
     
     var isFiltering: Bool {
         let searchController = self.navigationItem.searchController
@@ -43,12 +43,33 @@ class SearchVC: UIViewController {
     }
     
     
-    @objc func pullToRefresh(_ sender: Any) {
-        getPostList()
-        
-        refreshControl.endRefreshing() // 초기화 - refresh 종료
+    private func getPostList() {
+        AF.request("http://52.5.10.3:8080/board/all", method: .get)
+            .validate(statusCode: 200..<500)
+            .responseData {
+                response in switch response.result {
+                case .success:
+                    debugPrint(response)
+                    if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
+                        DispatchQueue.main.async { [self] in
+                            self.result = data.content
+                            self.searchTableView.reloadData()
+                            
+                            print("thisiswhatIprint")
+                            self.searchList.arrSearch = self.result.map { $0.title }
+                            self.arr = searchList.arrSearch
+                            print(arr)
+                        }
+                    }
+                    
+                    
+                case .failure(let error):
+                    print(error)
+                    
+            }
+        }
     }
-    
+
     
     func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
@@ -64,37 +85,6 @@ class SearchVC: UIViewController {
         self.searchTableView.delegate = self
         self.searchTableView.dataSource = self
     }
-    
-    
-    private func getPostList() {
-        AF.request("http://52.5.10.3:8080/board/all", method: .get)
-            .validate(statusCode: 200..<500)
-            .responseData {
-                response in switch response.result {
-                case .success:
-                    debugPrint(response)
-                    if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
-                        DispatchQueue.main.async {
-                            self.result = data.content
-                            self.searchTableView.reloadData()
-                            
-                            self.searchTableView.refreshControl = UIRefreshControl()
-                            self.searchTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
-                            self.refreshControl.endRefreshing()
-                        }
-                    }
-                    
-                    
-                case .failure(let error):
-                    print(error)
-                    
-                    self.searchTableView.refreshControl = UIRefreshControl()
-                    self.searchTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
-                    self.refreshControl.endRefreshing()
-            }
-        }
-    }
-    
 }
 
 extension SearchVC: UITableViewDelegate, UITableViewDataSource {
@@ -104,16 +94,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        
-        for _ in 1...result.count {
-            var i: Int = 0
-            
-            arr[i] = "\(result[indexPath.row].title)"
-            
-            i += 1
-        }
-        print(arr)
-        
         
         if self.isFiltering {
             cell.textLabel?.text = self.filteredArr[indexPath.row]
