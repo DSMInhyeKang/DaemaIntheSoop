@@ -10,7 +10,9 @@
 		3F3CD2B92883087100599190 /* MyPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3CD2B82883087100599190 /* MyPostCell.swift */; };
 		3F4EF7EC2872DCDA00903325 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF7EB2872DCDA00903325 /* KeyChain.swift */; };
 		3F4EF7F62874280A00903325 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EF7F52874280A00903325 /* TokenModel.swift */; };
-		3F536A85287ED47300287C1D /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F536A84287ED47300287C1D /* DetailPostModel.swift */; };
+		3F6B3EE6289BEACC0070E14D /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B3EE5289BEACC0070E14D /* UserInfoModel.swift */; };
+		3F6B3EE8289EAA500070E14D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B3EE7289EAA500070E14D /* CommentCell.swift */; };
+		3F6B3EEA289EAADE0070E14D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B3EE9289EAADE0070E14D /* CommentModel.swift */; };
 		3F92E6A8285AD15F00FCB5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6A7285AD15F00FCB5EC /* AppDelegate.swift */; };
 		3F92E6AA285AD15F00FCB5EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */; };
 		3F92E6AC285AD15F00FCB5EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6AB285AD15F00FCB5EC /* ViewController.swift */; };
@@ -34,8 +36,14 @@
 		3F92E6E0285B43F800FCB5EC /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */; };
 		3F92E6E3285C041B00FCB5EC /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6E2285C041B00FCB5EC /* PostListCell.swift */; };
 		3F92E6E8285C50A900FCB5EC /* MainPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6E7285C50A900FCB5EC /* MainPostModel.swift */; };
-		3F92E6EC285C700600FCB5EC /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92E6EB285C700600FCB5EC /* DetailVC.swift */; };
+		3F9909D5289BD84C00335A84 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9909D4289BD84C00335A84 /* DetailVC.swift */; };
+		3F9909D7289BD86400335A84 /* MyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9909D6289BD86400335A84 /* MyDetailVC.swift */; };
 		3FB12E08287D1E3800981B46 /* ReviseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB12E07287D1E3800981B46 /* ReviseVC.swift */; };
+		3FDA7B97289FF535005005F0 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA7B96289FF535005005F0 /* SearchVC.swift */; };
+		3FDA7B9B28A4ACAF005005F0 /* MyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA7B9A28A4ACAF005005F0 /* MyCommentCell.swift */; };
+		3FDA7B9D28A5439D005005F0 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA7B9C28A5439D005005F0 /* SearchModel.swift */; };
+		3FDA7B9F28A5F91D005005F0 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA7B9E28A5F91D005005F0 /* ResultVC.swift */; };
+		3FDA7BA328A602B9005005F0 /* ReCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDA7BA228A602B9005005F0 /* ReCommentCell.swift */; };
 		4BCDF654BCA071C5C4C82EE6 /* Pods_DaemaIntheSoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB830F4274AC196D52F5980F /* Pods_DaemaIntheSoop.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +52,9 @@
 		3F3CD2B82883087100599190 /* MyPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCell.swift; sourceTree = "<group>"; };
 		3F4EF7EB2872DCDA00903325 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		3F4EF7F52874280A00903325 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
-		3F536A84287ED47300287C1D /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
+		3F6B3EE5289BEACC0070E14D /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		3F6B3EE7289EAA500070E14D /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		3F6B3EE9289EAADE0070E14D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		3F92E6A4285AD15F00FCB5EC /* DaemaIntheSoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaemaIntheSoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F92E6A7285AD15F00FCB5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F92E6A9285AD15F00FCB5EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +80,14 @@
 		3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		3F92E6E2285C041B00FCB5EC /* PostListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 		3F92E6E7285C50A900FCB5EC /* MainPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPostModel.swift; sourceTree = "<group>"; };
-		3F92E6EB285C700600FCB5EC /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		3F9909D4289BD84C00335A84 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		3F9909D6289BD86400335A84 /* MyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailVC.swift; sourceTree = "<group>"; };
 		3FB12E07287D1E3800981B46 /* ReviseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseVC.swift; sourceTree = "<group>"; };
+		3FDA7B96289FF535005005F0 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		3FDA7B9A28A4ACAF005005F0 /* MyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCommentCell.swift; sourceTree = "<group>"; };
+		3FDA7B9C28A5439D005005F0 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		3FDA7B9E28A5F91D005005F0 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		3FDA7BA228A602B9005005F0 /* ReCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCommentCell.swift; sourceTree = "<group>"; };
 		86F85ADEA88BC67084519BFC /* Pods-DaemaIntheSoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaemaIntheSoop.debug.xcconfig"; path = "Target Support Files/Pods-DaemaIntheSoop/Pods-DaemaIntheSoop.debug.xcconfig"; sourceTree = "<group>"; };
 		AB830F4274AC196D52F5980F /* Pods_DaemaIntheSoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DaemaIntheSoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,7 +143,7 @@
 			children = (
 				3F4EF7EE2873243400903325 /* Token */,
 				3F4EF7ED2873183200903325 /* KeyChain */,
-				3F92E6E4285C507300FCB5EC /* Struct */,
+				3F92E6E4285C507300FCB5EC /* Model */,
 				3F92E6E1285C03E400FCB5EC /* TableVIewCell */,
 				3F92E6D3285B302700FCB5EC /* VC */,
 				3F92E6DC285B43A300FCB5EC /* TabBarVC */,
@@ -175,8 +191,11 @@
 				3F92E6DA285B3FF700FCB5EC /* TabBarVC.swift */,
 				3F92E6DD285B43EA00FCB5EC /* NewPostVC.swift */,
 				3F92E6DF285B43F800FCB5EC /* MyPageVC.swift */,
-				3F92E6EB285C700600FCB5EC /* DetailVC.swift */,
 				3FB12E07287D1E3800981B46 /* ReviseVC.swift */,
+				3F9909D4289BD84C00335A84 /* DetailVC.swift */,
+				3F9909D6289BD86400335A84 /* MyDetailVC.swift */,
+				3FDA7B96289FF535005005F0 /* SearchVC.swift */,
+				3FDA7B9E28A5F91D005005F0 /* ResultVC.swift */,
 			);
 			path = TabBarVC;
 			sourceTree = "<group>";
@@ -186,17 +205,22 @@
 			children = (
 				3F92E6E2285C041B00FCB5EC /* PostListCell.swift */,
 				3F3CD2B82883087100599190 /* MyPostCell.swift */,
+				3F6B3EE7289EAA500070E14D /* CommentCell.swift */,
+				3FDA7B9A28A4ACAF005005F0 /* MyCommentCell.swift */,
+				3FDA7BA228A602B9005005F0 /* ReCommentCell.swift */,
 			);
 			path = TableVIewCell;
 			sourceTree = "<group>";
 		};
-		3F92E6E4285C507300FCB5EC /* Struct */ = {
+		3F92E6E4285C507300FCB5EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3F92E6E7285C50A900FCB5EC /* MainPostModel.swift */,
-				3F536A84287ED47300287C1D /* DetailPostModel.swift */,
+				3F6B3EE5289BEACC0070E14D /* UserInfoModel.swift */,
+				3F6B3EE9289EAADE0070E14D /* CommentModel.swift */,
+				3FDA7B9C28A5439D005005F0 /* SearchModel.swift */,
 			);
-			path = Struct;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9CD06482F90FBED1F7995333 /* Pods */ = {
@@ -340,23 +364,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB12E08287D1E3800981B46 /* ReviseVC.swift in Sources */,
+				3F9909D7289BD86400335A84 /* MyDetailVC.swift in Sources */,
+				3FDA7BA328A602B9005005F0 /* ReCommentCell.swift in Sources */,
 				3F92E6B2285AD15F00FCB5EC /* DaemaIntheSoop.xcdatamodeld in Sources */,
+				3FDA7B9D28A5439D005005F0 /* SearchModel.swift in Sources */,
 				3F92E6DE285B43EA00FCB5EC /* NewPostVC.swift in Sources */,
+				3F6B3EEA289EAADE0070E14D /* CommentModel.swift in Sources */,
 				3F92E6AC285AD15F00FCB5EC /* ViewController.swift in Sources */,
+				3F9909D5289BD84C00335A84 /* DetailVC.swift in Sources */,
 				3F92E6A8285AD15F00FCB5EC /* AppDelegate.swift in Sources */,
 				3F3CD2B92883087100599190 /* MyPostCell.swift in Sources */,
 				3F92E6D5285B33F800FCB5EC /* LogInVC.swift in Sources */,
-				3F536A85287ED47300287C1D /* DetailPostModel.swift in Sources */,
 				3F92E6E3285C041B00FCB5EC /* PostListCell.swift in Sources */,
+				3FDA7B9B28A4ACAF005005F0 /* MyCommentCell.swift in Sources */,
 				3F92E6D7285B353200FCB5EC /* NewUserVC.swift in Sources */,
+				3FDA7B97289FF535005005F0 /* SearchVC.swift in Sources */,
+				3FDA7B9F28A5F91D005005F0 /* ResultVC.swift in Sources */,
 				3F4EF7EC2872DCDA00903325 /* KeyChain.swift in Sources */,
 				3F92E6AA285AD15F00FCB5EC /* SceneDelegate.swift in Sources */,
 				3F92E6E0285B43F800FCB5EC /* MyPageVC.swift in Sources */,
 				3F92E6DB285B3FF700FCB5EC /* TabBarVC.swift in Sources */,
+				3F6B3EE8289EAA500070E14D /* CommentCell.swift in Sources */,
 				3F92E6D9285B38C000FCB5EC /* MainVC.swift in Sources */,
 				3F4EF7F62874280A00903325 /* TokenModel.swift in Sources */,
 				3F92E6E8285C50A900FCB5EC /* MainPostModel.swift in Sources */,
-				3F92E6EC285C700600FCB5EC /* DetailVC.swift in Sources */,
+				3F6B3EE6289BEACC0070E14D /* UserInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
