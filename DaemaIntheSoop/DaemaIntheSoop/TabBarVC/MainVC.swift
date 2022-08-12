@@ -15,6 +15,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var result: [Content] = []
+    var searchList = SearchModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,6 @@ class MainVC: UIViewController {
         listTableView.separatorInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 30)
         
         getPostList()
-        
     }
     
     @objc func pullToRefresh(_ sender: Any) {
@@ -45,13 +45,14 @@ class MainVC: UIViewController {
                 case .success:
                     debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { [self] in
                             self.result = data.content
                             self.listTableView.reloadData()
                             
                             self.listTableView.refreshControl = UIRefreshControl()
                             self.listTableView.refreshControl?.addTarget(self, action: #selector(self.pullToRefresh(_:)), for: .valueChanged)
                             self.refreshControl.endRefreshing()
+                         
                         }
                     }
                     
@@ -65,8 +66,6 @@ class MainVC: UIViewController {
             }
         }
     }
-    
-    
 }
 
 
