@@ -45,7 +45,7 @@ class MainVC: UIViewController {
                 case .success:
                     debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
-                        DispatchQueue.main.async { [self] in
+                        DispatchQueue.main.async {
                             self.result = data.content
                             self.listTableView.reloadData()
                             
