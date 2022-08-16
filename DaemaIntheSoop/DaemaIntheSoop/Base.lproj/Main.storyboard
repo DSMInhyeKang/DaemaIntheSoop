@@ -1302,7 +1302,7 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="NoticeColor">
-            <color red="0.26666668059999998" green="0.270588249" blue="0.67058825489999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.2669999897480011" green="0.27099999785423279" blue="0.67100000381469727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ThemeColor">
             <color red="0.4309999942779541" green="0.43500000238418579" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
