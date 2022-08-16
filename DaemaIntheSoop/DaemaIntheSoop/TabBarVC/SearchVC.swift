@@ -14,9 +14,8 @@ class SearchVC: UIViewController {
     var searchList =  SearchModel()
     var result: [Content] = []
 
-    var arr: Array<String> = []
-    var idArr: Array<Int> = []
-    var filteredArr: [String] = []
+    var listArr: [SearchListModel] = []
+    var filteredArr: [SearchListModel] = []
     
     
     override func viewDidLoad() {
@@ -56,18 +55,19 @@ class SearchVC: UIViewController {
                 case .success:
                     debugPrint(response)
                     if let data = try? JSONDecoder().decode(MainPostModel.self, from: response.data!){
-                        DispatchQueue.main.async { [self] in
+                        DispatchQueue.main.async {
                             self.result = data.content
                             self.searchTableView.reloadData()
                             
                             print("thisiswhatIprint")
-                            self.searchList.arrSearch = self.result.map { $0.title }
-                            self.arr = searchList.arrSearch
-                            print(arr)
+                            self.listArr = self.result.map {
+                                let id = $0.id
+                                let title = $0.title
+                                
+                                return SearchListModel(id: id, title: title)
+                            }
+                            print(self.listArr)
                             
-                            self.searchList.arrID = self.result.map { $0.id }
-                            self.idArr = searchList.arrID
-                            print(idArr)
                         }
                     }
                     
@@ -99,17 +99,19 @@ class SearchVC: UIViewController {
 
 extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.isFiltering ? self.filteredArr.count : self.arr.count
+        return self.isFiltering ? self.filteredArr.count : self.listArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
         if self.isFiltering {
-            cell.textLabel?.text = self.filteredArr[indexPath.row]
+            cell.textLabel?.text = self.filteredArr[indexPath.row].title
         } else {
-            cell.textLabel?.text = self.arr[indexPath.row]
+            cell.textLabel?.text = self.listArr[indexPath.row].title
         }
+        
+        print("\(cell.textLabel?.text ?? "idontknow")")
         
         return cell
     }
@@ -117,11 +119,8 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchTableView.deselectRow(at: indexPath, animated: true)
         guard let view = self.storyboard?.instantiateViewController(withIdentifier: "ResultVC") as? ResultVC else { return }
-//        view.postTitle = "\(result[indexPath.row].title)"
-//        view.postWriter = "\(result[indexPath.row].username)"
-//        view.txt = "\(result[indexPath.row].content)"
-//        view.postID = result[indexPath.row].id
-        view.postID = idArr[indexPath.row]
+        
+        view.postID = self.isFiltering ? self.filteredArr[indexPath.row].id : self.listArr[indexPath.row].id
         print(view.postID)
         
         navigationController?.pushViewController(view, animated: true)
@@ -131,7 +130,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
 extension SearchVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text?.lowercased() else { return }
-        self.filteredArr = self.arr.filter { $0.localizedCaseInsensitiveContains(text) }
+        self.filteredArr = self.listArr.filter { $0.title.localizedCaseInsensitiveContains(text) }
         
         self.searchTableView.reloadData()
     }
