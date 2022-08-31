@@ -12,25 +12,29 @@ class LogInVC: UIViewController {
     @IBOutlet weak var txtFieldID: UITextField!
     @IBOutlet weak var txtFieldPW: UITextField!
     @IBAction func btnLogIn(_ sender: Any) {
-        signin()
+        signIn()
     }
     
     @IBOutlet weak var passwordEyeBtn: UIButton!
+    @IBOutlet weak var checkBox: UIButton!
     
-    let autoSignIn: Bool = true
+    var autoState: Bool = true
     
-    let myUserDefaults = UserDefaults.standard
-    
+    var userID: String = ""
+    var userPW: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        txtFieldPW.isSecureTextEntry = true
         let button = UIButton(type: .custom)
         button.layer.cornerRadius = button.frame.width/2
         button.clipsToBounds = true
+        manualSignIn()
     }
+    
     
     @IBAction func passwordEyeBtnDidTap(_ sender: Any) {
         // 보안 설정 반전
@@ -44,7 +48,46 @@ class LogInVC: UIViewController {
         passwordEyeBtn.tintColor = .clear
     }
     
-    private func signin() {
+    
+    @IBAction func btnAutoSignIn(_ sender: UIButton) {
+        if(autoState == false) {
+            autoSignIn()
+        }
+        
+        else if (autoState == true) {
+            manualSignIn()
+        }
+    }
+    
+    
+    func autoSignIn() {
+        checkBox.titleLabel?.textColor = UIColor(named: "ThemeColor")
+        let state = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
+        let successImage = UIImage(systemName: "checkmark.square.fill", withConfiguration: state)
+        checkBox.setImage(successImage, for: .normal)
+        
+        autoState = true
+        
+        userID = self.txtFieldID.text!
+        userPW = self.txtFieldPW.text!
+        
+        UserDefaults.standard.set(self.userID, forKey: "id")
+        UserDefaults.standard.set(self.userPW, forKey: "pw")
+        
+    }
+    
+    func manualSignIn() {
+        checkBox.titleLabel?.textColor = UIColor(named: "ThemeColor")
+        let state = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
+        let successImage = UIImage(systemName: "square", withConfiguration: state)
+        checkBox.setImage(successImage, for: .normal)
+        
+        autoState = false
+    }
+    
+    
+    
+    private func signIn() {
         let url = "http://52.5.10.3:8080/login"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
