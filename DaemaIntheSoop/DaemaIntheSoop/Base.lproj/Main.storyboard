@@ -96,7 +96,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnCreate" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqp-oO-hpt">
-                                <rect key="frame" x="0.0" y="344" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="364" width="414" height="31"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-tC-OKL">
-                                <rect key="frame" x="55" y="375" width="304" height="45"/>
+                                <rect key="frame" x="55" y="395" width="304" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SmZ-mj-xjb"/>
                                 </constraints>
@@ -154,6 +154,18 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cQ-AX-xNw">
+                                <rect key="frame" x="40" y="309" width="124.5" height="32"/>
+                                <color key="tintColor" name="NoticeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="square" catalog="system" title="로그인 유지" imagePadding="10">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="baseForegroundColor" name="NoticeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAutoSignIn:" destination="vWv-FJ-z4M" eventType="touchUpInside" id="YOC-bv-bJg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8pd-bL-i1H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -161,7 +173,8 @@
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="GJa-NV-xfZ" secondAttribute="trailing" constant="50" id="1sk-9i-wyc"/>
                             <constraint firstItem="GJa-NV-xfZ" firstAttribute="top" secondItem="L9H-o6-IU3" secondAttribute="bottom" constant="40" id="2e6-Xd-aFe"/>
                             <constraint firstItem="fUV-mF-ria" firstAttribute="leading" secondItem="x4w-kq-CeZ" secondAttribute="leading" id="4N0-7e-bZL"/>
-                            <constraint firstItem="kqp-oO-hpt" firstAttribute="top" secondItem="GJa-NV-xfZ" secondAttribute="bottom" constant="40" id="AfO-sn-mbJ"/>
+                            <constraint firstItem="5cQ-AX-xNw" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="40" id="5WU-U2-rhL"/>
+                            <constraint firstItem="kqp-oO-hpt" firstAttribute="top" secondItem="GJa-NV-xfZ" secondAttribute="bottom" constant="60" id="AfO-sn-mbJ"/>
                             <constraint firstItem="GJa-NV-xfZ" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="50" id="CPK-Ud-rjv"/>
                             <constraint firstItem="2DM-V9-NOT" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" constant="55" id="DOD-13-vFx"/>
                             <constraint firstItem="fUV-mF-ria" firstAttribute="top" secondItem="fU6-Jy-aYZ" secondAttribute="bottom" constant="20" id="F0S-Ho-53u"/>
@@ -177,6 +190,7 @@
                             <constraint firstItem="B0h-Ox-dlL" firstAttribute="top" secondItem="L9H-o6-IU3" secondAttribute="bottom" constant="42" id="eue-S5-cog"/>
                             <constraint firstItem="L9H-o6-IU3" firstAttribute="top" secondItem="2DM-V9-NOT" secondAttribute="bottom" id="fUg-Nt-NXg"/>
                             <constraint firstItem="fU6-Jy-aYZ" firstAttribute="top" secondItem="x4w-kq-CeZ" secondAttribute="topMargin" constant="25" id="i40-ie-pQL"/>
+                            <constraint firstItem="5cQ-AX-xNw" firstAttribute="top" secondItem="GJa-NV-xfZ" secondAttribute="bottom" constant="5" id="iif-5U-yXj"/>
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="fU6-Jy-aYZ" secondAttribute="trailing" id="juS-hb-0ZK"/>
                             <constraint firstItem="8pd-bL-i1H" firstAttribute="trailing" secondItem="NaN-tC-OKL" secondAttribute="trailing" constant="55" id="sYD-I4-Ny8"/>
                             <constraint firstItem="kqp-oO-hpt" firstAttribute="leading" secondItem="8pd-bL-i1H" secondAttribute="leading" id="sjk-Mt-NWm"/>
@@ -186,6 +200,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aky-Tp-WZJ"/>
                     <connections>
+                        <outlet property="checkBox" destination="5cQ-AX-xNw" id="byI-Ni-E6t"/>
                         <outlet property="passwordEyeBtn" destination="B0h-Ox-dlL" id="hng-ac-AUd"/>
                         <outlet property="txtFieldID" destination="L9H-o6-IU3" id="tRy-JX-LeU"/>
                         <outlet property="txtFieldPW" destination="GJa-NV-xfZ" id="dRX-LE-5ru"/>
@@ -1299,6 +1314,7 @@
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
+        <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="NoticeColor">
