@@ -12,6 +12,7 @@ struct CommentModel: Codable {
 }
 
 struct Reply: Codable {
+    var commentId: Int = .init()
     var username: String = .init()
     var comment: String = .init()
 }
