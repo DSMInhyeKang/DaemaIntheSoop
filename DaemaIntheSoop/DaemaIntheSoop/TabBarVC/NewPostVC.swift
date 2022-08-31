@@ -16,6 +16,17 @@ class NewPostVC: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        txtFieldNewTitle.layer.cornerRadius = 5
+        txtFieldNewTitle.layer.borderWidth = 1.0
+        txtFieldNewTitle.layer.borderColor = UIColor.lightGray.cgColor
+        txtViewNewContent.layer.cornerRadius = 10
+        txtViewNewContent.layer.borderWidth = 1.0
+        txtViewNewContent.layer.borderColor = UIColor(named: "ThemeColor")?.cgColor
+        txtViewNewContent.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    
     
     @IBAction func btnSendPost(_ sender: Any) {
         let txtFieldNewTitle = self.txtFieldNewTitle.text
@@ -28,9 +39,6 @@ class NewPostVC: UIViewController {
         request.method = .post
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
-        
-        
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
