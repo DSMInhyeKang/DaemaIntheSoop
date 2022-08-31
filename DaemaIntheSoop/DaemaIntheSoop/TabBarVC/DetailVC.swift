@@ -109,10 +109,6 @@ class DetailVC: UIViewController {
             switch response.result {
             case .success:
                 debugPrint(response)
-//                let successOnAlert = UIAlertController(title: "안내", message: "등록 성공", preferredStyle: UIAlertController.Style.alert)
-//                let onAction = UIAlertAction(title: "닫기", style: UIAlertAction.Style.default, handler: nil)
-//                successOnAlert.addAction(onAction)
-//                self.present(successOnAlert, animated: true, completion: nil)
                 
                 self.txtFieldComment.text = nil
                
