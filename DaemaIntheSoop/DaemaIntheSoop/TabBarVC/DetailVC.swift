@@ -142,9 +142,8 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentCell
         cell.lbUser.text = "\(model.content[indexPath.row].username)"
         cell.lbComment.text = "\(model.content[indexPath.row].comment)"
+        cell.commentID = self.model.content[indexPath.row].commentId
         
-        print(cell.lbUser.text!)
-        print(cell.lbComment.text!)
         
         return cell
     }
