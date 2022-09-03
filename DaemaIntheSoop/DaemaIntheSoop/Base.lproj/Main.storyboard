@@ -1105,6 +1105,7 @@
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="btnDeleteComment:" destination="Ldo-Pd-yy8" eventType="touchUpInside" id="Mf8-d7-DfE"/>
+                                                        <segue destination="6dQ-E4-h3f" kind="presentation" id="5qD-XF-5sQ"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-0j-aei">
@@ -1119,6 +1120,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="10" weight="bold"/>
                                                         <color key="baseForegroundColor" name="NoticeColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <segue destination="omP-4s-jT5" kind="presentation" id="VjY-kI-v3E"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1204,6 +1208,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsg-vf-T6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4163.768115942029" y="-1385.4910714285713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EDx-T2-cXT">
+            <objects>
+                <viewController id="6dQ-E4-h3f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h25-bW-CPe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1Ly-Eg-3DA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ym-ME-RNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5041" y="-1240"/>
+        </scene>
+        <!--CommentVC-->
+        <scene sceneID="a8g-Pi-50k">
+            <objects>
+                <viewController id="omP-4s-jT5" customClass="CommentVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dzn-OL-1ZP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-Oi-L7V">
+                                <rect key="frame" x="161" y="44" width="92" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter the comments." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-dF-Syb">
+                                <rect key="frame" x="50" y="124" width="314" height="268"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Tq-QU-gNO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ovh-dF-Syb" firstAttribute="leading" secondItem="0Tq-QU-gNO" secondAttribute="leading" constant="50" id="KDg-PR-3mA"/>
+                            <constraint firstItem="4xr-Oi-L7V" firstAttribute="top" secondItem="0Tq-QU-gNO" secondAttribute="top" id="KLG-Tb-ygG"/>
+                            <constraint firstItem="ovh-dF-Syb" firstAttribute="top" secondItem="4xr-Oi-L7V" secondAttribute="bottom" constant="50" id="KQG-YS-TAc"/>
+                            <constraint firstItem="0Tq-QU-gNO" firstAttribute="bottom" secondItem="ovh-dF-Syb" secondAttribute="bottom" constant="450" id="UT5-J6-YHM"/>
+                            <constraint firstItem="4xr-Oi-L7V" firstAttribute="centerX" secondItem="0Tq-QU-gNO" secondAttribute="centerX" id="wvj-cr-kHy"/>
+                            <constraint firstItem="0Tq-QU-gNO" firstAttribute="trailing" secondItem="ovh-dF-Syb" secondAttribute="trailing" constant="50" id="xdc-fm-1gm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yt0-Di-aLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5041" y="-1896"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="G4W-TS-iaU">
