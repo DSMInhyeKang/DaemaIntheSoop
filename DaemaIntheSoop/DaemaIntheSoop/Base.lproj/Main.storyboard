@@ -483,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocx-Qm-iX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5041" y="694"/>
+            <point key="canvasLocation" x="5906" y="694"/>
         </scene>
         <!--Main-->
         <scene sceneID="3OB-AE-tSb">
@@ -1091,53 +1091,39 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLa-f8-LgR">
-                                                    <rect key="frame" x="364" y="11" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="OF2-v9-vbV"/>
-                                                        <constraint firstAttribute="height" constant="30" id="bgr-EH-Hv4"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WIQ-Rv-XIe">
+                                                    <rect key="frame" x="374" y="10" width="20" height="25.5"/>
                                                     <color key="tintColor" name="NoticeColor"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="10" weight="semibold"/>
-                                                        <color key="baseForegroundColor" name="NoticeColor"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="btnDeleteComment:" destination="Ldo-Pd-yy8" eventType="touchUpInside" id="Mf8-d7-DfE"/>
-                                                        <segue destination="6dQ-E4-h3f" kind="presentation" id="5qD-XF-5sQ"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4g-0j-aei">
-                                                    <rect key="frame" x="334" y="11" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Ino-mg-dJi"/>
-                                                        <constraint firstAttribute="width" constant="30" id="nwy-XC-zGx"/>
+                                                        <constraint firstAttribute="height" constant="25" id="g3H-uO-KsJ"/>
+                                                        <constraint firstAttribute="width" constant="20" id="gpn-2P-17f"/>
                                                     </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="14" scale="default" weight="regular"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sj-b4-r4p">
+                                                    <rect key="frame" x="349" y="12" width="20" height="23"/>
                                                     <color key="tintColor" name="NoticeColor"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="character.cursor.ibeam.ko" catalog="system">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="10" weight="bold"/>
-                                                        <color key="baseForegroundColor" name="NoticeColor"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <segue destination="omP-4s-jT5" kind="presentation" id="VjY-kI-v3E"/>
-                                                    </connections>
-                                                </button>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="1mY-k7-knP"/>
+                                                        <constraint firstAttribute="height" constant="25" id="glJ-Ed-0bp"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="character.cursor.ibeam.ko" catalog="system" symbolScale="small"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10" scale="small" weight="bold"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CLa-f8-LgR" firstAttribute="leading" secondItem="u4g-0j-aei" secondAttribute="trailing" id="0GW-kx-uQa"/>
-                                                <constraint firstItem="CLa-f8-LgR" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="3Bk-Ui-dlU"/>
                                                 <constraint firstItem="FO5-0o-HWA" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="7cR-4z-SO2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="FO5-0o-HWA" secondAttribute="bottom" id="8GE-z0-QHP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WIQ-Rv-XIe" secondAttribute="trailing" id="BaT-gk-nn9"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LvR-T8-CG4" secondAttribute="bottom" id="Bsf-6K-oA9"/>
                                                 <constraint firstItem="gtn-KK-XEo" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="Dsx-fR-14s"/>
                                                 <constraint firstItem="LvR-T8-CG4" firstAttribute="top" secondItem="gtn-KK-XEo" secondAttribute="bottom" constant="3" id="IvG-rM-AhY"/>
                                                 <constraint firstItem="LvR-T8-CG4" firstAttribute="leading" secondItem="FO5-0o-HWA" secondAttribute="trailing" constant="20" id="Kny-8C-uwO"/>
+                                                <constraint firstItem="WIQ-Rv-XIe" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="RZx-At-CRX"/>
                                                 <constraint firstItem="FO5-0o-HWA" firstAttribute="leading" secondItem="K5A-hZ-rbc" secondAttribute="leadingMargin" constant="10" id="SQ7-yo-fW0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CLa-f8-LgR" secondAttribute="trailing" id="b0r-Ub-LI0"/>
+                                                <constraint firstItem="5sj-b4-r4p" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="TvD-ow-TRc"/>
                                                 <constraint firstItem="gtn-KK-XEo" firstAttribute="leading" secondItem="FO5-0o-HWA" secondAttribute="trailing" constant="20" id="deK-mP-PHd"/>
-                                                <constraint firstItem="u4g-0j-aei" firstAttribute="top" secondItem="K5A-hZ-rbc" secondAttribute="topMargin" id="tpf-F3-SpQ"/>
+                                                <constraint firstItem="WIQ-Rv-XIe" firstAttribute="leading" secondItem="5sj-b4-r4p" secondAttribute="trailing" constant="5" id="m0V-Lq-loW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1209,58 +1195,73 @@
             </objects>
             <point key="canvasLocation" x="4163.768115942029" y="-1385.4910714285713"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="EDx-T2-cXT">
-            <objects>
-                <viewController id="6dQ-E4-h3f" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h25-bW-CPe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="1Ly-Eg-3DA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ym-ME-RNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5041" y="-1240"/>
-        </scene>
         <!--CommentVC-->
         <scene sceneID="a8g-Pi-50k">
             <objects>
-                <viewController id="omP-4s-jT5" customClass="CommentVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentVC" id="omP-4s-jT5" customClass="CommentVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzn-OL-1ZP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-Oi-L7V">
-                                <rect key="frame" x="161" y="44" width="92" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="152" y="44" width="110.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter the comments." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-dF-Syb">
-                                <rect key="frame" x="50" y="124" width="314" height="268"/>
+                                <rect key="frame" x="35" y="130" width="344" height="282"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKX-lL-Mn4">
+                                <rect key="frame" x="50" y="492" width="314" height="44"/>
+                                <color key="tintColor" name="ThemeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정하기" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                    <color key="baseBackgroundColor" name="ThemeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnReviseComment:" destination="omP-4s-jT5" eventType="touchUpInside" id="fSo-Ha-t1I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvn-Wb-8f2">
+                                <rect key="frame" x="120.5" y="551" width="173" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제하시겠습니까?">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnDelete:" destination="omP-4s-jT5" eventType="touchUpInside" id="wSY-QE-Wiz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Tq-QU-gNO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ovh-dF-Syb" firstAttribute="leading" secondItem="0Tq-QU-gNO" secondAttribute="leading" constant="50" id="KDg-PR-3mA"/>
+                            <constraint firstItem="iKX-lL-Mn4" firstAttribute="leading" secondItem="0Tq-QU-gNO" secondAttribute="leading" constant="50" id="8uV-yh-j9y"/>
+                            <constraint firstItem="Jvn-Wb-8f2" firstAttribute="centerX" secondItem="0Tq-QU-gNO" secondAttribute="centerX" id="ElN-gF-o8g"/>
+                            <constraint firstItem="iKX-lL-Mn4" firstAttribute="top" secondItem="ovh-dF-Syb" secondAttribute="bottom" constant="80" id="I1a-s3-Okc"/>
+                            <constraint firstItem="0Tq-QU-gNO" firstAttribute="trailing" secondItem="iKX-lL-Mn4" secondAttribute="trailing" constant="50" id="IdS-WA-ev5"/>
+                            <constraint firstItem="ovh-dF-Syb" firstAttribute="leading" secondItem="0Tq-QU-gNO" secondAttribute="leading" constant="35" id="KDg-PR-3mA"/>
                             <constraint firstItem="4xr-Oi-L7V" firstAttribute="top" secondItem="0Tq-QU-gNO" secondAttribute="top" id="KLG-Tb-ygG"/>
                             <constraint firstItem="ovh-dF-Syb" firstAttribute="top" secondItem="4xr-Oi-L7V" secondAttribute="bottom" constant="50" id="KQG-YS-TAc"/>
                             <constraint firstItem="0Tq-QU-gNO" firstAttribute="bottom" secondItem="ovh-dF-Syb" secondAttribute="bottom" constant="450" id="UT5-J6-YHM"/>
+                            <constraint firstItem="Jvn-Wb-8f2" firstAttribute="top" secondItem="iKX-lL-Mn4" secondAttribute="bottom" constant="15" id="dcz-wk-zz0"/>
                             <constraint firstItem="4xr-Oi-L7V" firstAttribute="centerX" secondItem="0Tq-QU-gNO" secondAttribute="centerX" id="wvj-cr-kHy"/>
-                            <constraint firstItem="0Tq-QU-gNO" firstAttribute="trailing" secondItem="ovh-dF-Syb" secondAttribute="trailing" constant="50" id="xdc-fm-1gm"/>
+                            <constraint firstItem="0Tq-QU-gNO" firstAttribute="trailing" secondItem="ovh-dF-Syb" secondAttribute="trailing" constant="35" id="xdc-fm-1gm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtViewComment" destination="ovh-dF-Syb" id="MnC-UQ-kLf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yt0-Di-aLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5041" y="-1896"/>
+            <point key="canvasLocation" x="4944.927536231884" y="-1385.4910714285713"/>
         </scene>
         <!--ResultVC-->
         <scene sceneID="G4W-TS-iaU">
@@ -1339,15 +1340,38 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nsh-cW-Ib0">
+                                                    <rect key="frame" x="374" y="10.5" width="20" height="25.5"/>
+                                                    <color key="tintColor" name="NoticeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="hBa-4r-4Wc"/>
+                                                        <constraint firstAttribute="height" constant="25" id="m8l-Ra-TjS"/>
+                                                    </constraints>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" scale="default" weight="regular"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ydr-y1-yAV">
+                                                    <rect key="frame" x="349" y="12" width="20" height="23"/>
+                                                    <color key="tintColor" name="NoticeColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="GlL-OM-s9I"/>
+                                                        <constraint firstAttribute="width" constant="20" id="mIQ-Ef-DPb"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="character.cursor.ibeam.ko" catalog="system" symbolScale="small"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10" scale="small" weight="bold"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Ydr-y1-yAV" firstAttribute="top" secondItem="Q36-ol-NuY" secondAttribute="topMargin" id="0VL-PT-TTm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bo6-aS-aaM" secondAttribute="bottom" id="5n3-JU-Kir"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jK6-gp-YK5" secondAttribute="bottom" id="8zI-VX-fE0"/>
                                                 <constraint firstItem="bo6-aS-aaM" firstAttribute="top" secondItem="Q36-ol-NuY" secondAttribute="topMargin" id="HH7-sp-sZl"/>
                                                 <constraint firstItem="dKQ-eN-8WM" firstAttribute="leading" secondItem="bo6-aS-aaM" secondAttribute="trailing" constant="20" id="RjG-i5-BfA"/>
                                                 <constraint firstItem="bo6-aS-aaM" firstAttribute="leading" secondItem="Q36-ol-NuY" secondAttribute="leadingMargin" constant="10" id="fKk-HG-Wo0"/>
                                                 <constraint firstItem="jK6-gp-YK5" firstAttribute="leading" secondItem="bo6-aS-aaM" secondAttribute="trailing" constant="20" id="g2e-hn-Hvk"/>
+                                                <constraint firstItem="nsh-cW-Ib0" firstAttribute="leading" secondItem="Ydr-y1-yAV" secondAttribute="trailing" constant="5" id="mtp-D2-Juc"/>
                                                 <constraint firstItem="dKQ-eN-8WM" firstAttribute="top" secondItem="Q36-ol-NuY" secondAttribute="topMargin" id="poV-fL-WTn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="nsh-cW-Ib0" secondAttribute="trailing" id="psi-p6-QJW"/>
+                                                <constraint firstItem="nsh-cW-Ib0" firstAttribute="top" secondItem="Q36-ol-NuY" secondAttribute="topMargin" id="qBp-cq-MDh"/>
                                                 <constraint firstItem="jK6-gp-YK5" firstAttribute="top" secondItem="dKQ-eN-8WM" secondAttribute="bottom" constant="3" id="y5L-MS-2Ng"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1396,6 +1420,140 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaO-Ij-Pl7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4163.768115942029" y="2.6785714285714284"/>
+        </scene>
+        <!--Search CommentVC-->
+        <scene sceneID="ee5-OZ-w7P">
+            <objects>
+                <viewController storyboardIdentifier="SearchCommentVC" id="PTk-S2-AR9" customClass="SearchCommentVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wwh-CH-h5C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-ZX-8ZK">
+                                <rect key="frame" x="151.5" y="54" width="111" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter the comments." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="g5s-kM-9pp">
+                                <rect key="frame" x="35" y="140" width="344" height="272"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1My-ZU-YRK">
+                                <rect key="frame" x="50" y="492" width="314" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정하기" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                    <color key="baseBackgroundColor" name="ThemeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnResultRevise:" destination="PTk-S2-AR9" eventType="touchUpInside" id="MAV-5Y-HN0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-bu-EOS">
+                                <rect key="frame" x="120.5" y="551" width="173" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제하시겠습니까?">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnResultDelete:" destination="PTk-S2-AR9" eventType="touchUpInside" id="FNt-JB-SGc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SPw-Oz-HDg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AA5-bu-EOS" firstAttribute="top" secondItem="1My-ZU-YRK" secondAttribute="bottom" constant="15" id="1aJ-eE-ivZ"/>
+                            <constraint firstItem="1My-ZU-YRK" firstAttribute="top" secondItem="g5s-kM-9pp" secondAttribute="bottom" constant="80" id="8T3-xw-jnc"/>
+                            <constraint firstItem="1My-ZU-YRK" firstAttribute="leading" secondItem="SPw-Oz-HDg" secondAttribute="leading" constant="50" id="Mgf-gB-zyC"/>
+                            <constraint firstItem="SPw-Oz-HDg" firstAttribute="trailing" secondItem="g5s-kM-9pp" secondAttribute="trailing" constant="35" id="Tan-1o-gZK"/>
+                            <constraint firstItem="g5s-kM-9pp" firstAttribute="leading" secondItem="SPw-Oz-HDg" secondAttribute="leading" constant="35" id="VQm-1b-xhh"/>
+                            <constraint firstItem="AA5-bu-EOS" firstAttribute="centerX" secondItem="SPw-Oz-HDg" secondAttribute="centerX" id="crr-uh-Hu0"/>
+                            <constraint firstItem="SPw-Oz-HDg" firstAttribute="trailing" secondItem="1My-ZU-YRK" secondAttribute="trailing" constant="50" id="hTj-IL-a4S"/>
+                            <constraint firstItem="g5s-kM-9pp" firstAttribute="top" secondItem="mgR-ZX-8ZK" secondAttribute="bottom" constant="50" id="jbh-sU-WV4"/>
+                            <constraint firstItem="SPw-Oz-HDg" firstAttribute="bottom" secondItem="g5s-kM-9pp" secondAttribute="bottom" constant="450" id="nxL-c4-BUB"/>
+                            <constraint firstItem="mgR-ZX-8ZK" firstAttribute="top" secondItem="SPw-Oz-HDg" secondAttribute="top" constant="10" id="qa8-5U-YXv"/>
+                            <constraint firstItem="mgR-ZX-8ZK" firstAttribute="centerX" secondItem="SPw-Oz-HDg" secondAttribute="centerX" id="reo-j5-wfe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtViewComment" destination="g5s-kM-9pp" id="6vr-qJ-iep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ub-QH-cgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5041" y="3"/>
+        </scene>
+        <!--My CommentVC-->
+        <scene sceneID="O7k-ex-VbV">
+            <objects>
+                <viewController storyboardIdentifier="MyCommentVC" id="2Au-jX-zCa" customClass="MyCommentVC" customModule="DaemaIntheSoop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VAl-8k-dwX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlS-7A-gLl">
+                                <rect key="frame" x="152" y="54" width="110.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please enter the comments." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="AnK-Qh-vQR">
+                                <rect key="frame" x="35" y="140" width="344" height="272"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-68-1zm">
+                                <rect key="frame" x="50" y="492" width="314" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="수정하기" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
+                                    <color key="baseBackgroundColor" name="ThemeColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnReviseMy:" destination="2Au-jX-zCa" eventType="touchUpInside" id="JwI-TK-hfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgA-ft-7df">
+                                <rect key="frame" x="120.5" y="551" width="173" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제하시겠습니까?">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnDeleteMy:" destination="2Au-jX-zCa" eventType="touchUpInside" id="f7x-Mi-d3u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nbB-kU-EAD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tlS-7A-gLl" firstAttribute="centerX" secondItem="nbB-kU-EAD" secondAttribute="centerX" id="1S8-CY-x2b"/>
+                            <constraint firstItem="HgA-ft-7df" firstAttribute="top" secondItem="F4C-68-1zm" secondAttribute="bottom" constant="15" id="6UQ-jY-bNx"/>
+                            <constraint firstItem="F4C-68-1zm" firstAttribute="top" secondItem="AnK-Qh-vQR" secondAttribute="bottom" constant="80" id="K05-uh-bDV"/>
+                            <constraint firstItem="AnK-Qh-vQR" firstAttribute="leading" secondItem="nbB-kU-EAD" secondAttribute="leading" constant="35" id="S55-VR-OfS"/>
+                            <constraint firstItem="nbB-kU-EAD" firstAttribute="trailing" secondItem="AnK-Qh-vQR" secondAttribute="trailing" constant="35" id="Vo4-hZ-oz6"/>
+                            <constraint firstItem="AnK-Qh-vQR" firstAttribute="top" secondItem="tlS-7A-gLl" secondAttribute="bottom" constant="50" id="aaQ-QC-oJz"/>
+                            <constraint firstItem="tlS-7A-gLl" firstAttribute="top" secondItem="nbB-kU-EAD" secondAttribute="top" constant="10" id="ccF-R4-wkd"/>
+                            <constraint firstItem="nbB-kU-EAD" firstAttribute="bottom" secondItem="AnK-Qh-vQR" secondAttribute="bottom" constant="450" id="f8v-Mm-oVi"/>
+                            <constraint firstItem="F4C-68-1zm" firstAttribute="leading" secondItem="nbB-kU-EAD" secondAttribute="leading" constant="50" id="llJ-Cb-UA8"/>
+                            <constraint firstItem="nbB-kU-EAD" firstAttribute="trailing" secondItem="F4C-68-1zm" secondAttribute="trailing" constant="50" id="sxA-xX-OHf"/>
+                            <constraint firstItem="HgA-ft-7df" firstAttribute="centerX" secondItem="nbB-kU-EAD" secondAttribute="centerX" id="wF8-hk-h0h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTextView" destination="AnK-Qh-vQR" id="mxz-eA-Ykk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0A-YX-xYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5041" y="694"/>
         </scene>
     </scenes>
     <resources>

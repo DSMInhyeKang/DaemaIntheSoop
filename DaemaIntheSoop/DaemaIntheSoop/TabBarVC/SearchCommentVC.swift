@@ -1,37 +1,36 @@
 //
-//  CommentVC.swift
+//  SearchCommentVC.swift
 //  DaemaIntheSoop
 //
-//  Created by 강인혜 on 2022/09/03.
+//  Created by 강인혜 on 2022/09/06.
 //
 
 import UIKit
 import Alamofire
 
-class CommentVC: UIViewController {
+class SearchCommentVC: UIViewController {
     @IBOutlet weak var txtViewComment: UITextView!
     
-    var commentID: Int = 0
-    var commentContent: String?
+    var searchID: Int = 0
+    var searchComment: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.txtViewComment.text = "\(commentContent ?? "")"
+        self.txtViewComment.text = "\(searchComment ?? "")"
         
         txtViewComment.layer.cornerRadius = 10
         txtViewComment.layer.borderWidth = 1.0
         txtViewComment.layer.borderColor = UIColor(named: "ThemeColor")?.cgColor
         txtViewComment.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
-    
-    
-    @IBAction func btnReviseComment(_ sender: UIButton) {
-        commentContent = self.txtViewComment.text
 
-        let url = "http://52.5.10.3:8080/board/comment/\(commentID)"
+    @IBAction func btnResultRevise(_ sender: UIButton) {
+        searchComment = self.txtViewComment.text
+
+        let url = "http://52.5.10.3:8080/board/comment/\(searchID)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .patch
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -40,7 +39,7 @@ class CommentVC: UIViewController {
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
        
-        let params = ["comment" : commentContent!] as Dictionary
+        let params = ["comment" : searchComment!] as Dictionary
         
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
@@ -80,9 +79,8 @@ class CommentVC: UIViewController {
     }
     
     
-    
-    @IBAction func btnDelete(_ sender: UIButton) {
-        let url = "http://52.5.10.3:8080/board/comment/\(commentID)"
+    @IBAction func btnResultDelete(_ sender: UIButton) {
+        let url = "http://52.5.10.3:8080/board/comment/\(searchID)"
         var request = URLRequest(url: URL(string: url)!)
         request.method = .delete
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -114,9 +112,7 @@ class CommentVC: UIViewController {
                 debugPrint(response)
             }
         }
+
     }
     
-    
 }
-
-

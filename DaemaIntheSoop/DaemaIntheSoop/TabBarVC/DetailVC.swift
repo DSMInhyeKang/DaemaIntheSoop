@@ -8,6 +8,10 @@
 import UIKit
 import Alamofire
 
+protocol SendUpdateDelegate {
+    func cmtID(commentId: Int)
+}
+
 class DetailVC: UIViewController {
     @IBOutlet weak var lbPostTitle: UILabel!
     @IBOutlet weak var lbPostWriter: UILabel!
@@ -53,9 +57,6 @@ class DetailVC: UIViewController {
         var request = URLRequest(url: URL(string: url)!)
         request.method = .get
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.timeoutInterval = 10
-        
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue( "Bearer \(KeyChain.read(key: "accessToken") ?? "")", forHTTPHeaderField: "Authorization")
         
@@ -130,6 +131,8 @@ class DetailVC: UIViewController {
             
         }
     }
+    
+    
 }
 
 
@@ -142,9 +145,23 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentCell
         cell.lbUser.text = "\(model.content[indexPath.row].username)"
         cell.lbComment.text = "\(model.content[indexPath.row].comment)"
-        cell.commentID = self.model.content[indexPath.row].commentId
-        
+        cell.commentID = model.content[indexPath.row].commentId
+       
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        commentTableView.deselectRow(at: indexPath, animated: true)
+        guard let view = self.storyboard?.instantiateViewController(withIdentifier: "CommentVC") as? CommentVC else { return }
+
+        view.commentID = self.model.content[indexPath.row].commentId
+        view.commentContent = "\(self.model.content[indexPath.row].comment)"
+
+        print(self.model.content[indexPath.row].commentId)
+        print(self.model.content[indexPath.row].comment)
+
+        navigationController?.pushViewController(view, animated: true)
+    }
+    
 }

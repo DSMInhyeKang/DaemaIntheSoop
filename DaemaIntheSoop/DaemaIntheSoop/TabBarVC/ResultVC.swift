@@ -184,4 +184,17 @@ extension ResultVC: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let view = self.storyboard?.instantiateViewController(withIdentifier: "SearchCommentVC") as? SearchCommentVC else { return }
+
+        view.searchID = self.model.content[indexPath.row].commentId
+        view.searchComment = "\(self.model.content[indexPath.row].comment)"
+
+        print(self.model.content[indexPath.row].commentId)
+        print(self.model.content[indexPath.row].comment)
+
+        navigationController?.pushViewController(view, animated: true)
+    }
+    
 }

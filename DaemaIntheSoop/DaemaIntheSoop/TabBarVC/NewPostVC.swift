@@ -19,7 +19,7 @@ class NewPostVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         txtFieldNewTitle.layer.cornerRadius = 5
         txtFieldNewTitle.layer.borderWidth = 1.0
-        txtFieldNewTitle.layer.borderColor = UIColor.lightGray.cgColor
+        txtFieldNewTitle.layer.borderColor = UIColor(named: "ThemeColor")?.cgColor
         txtViewNewContent.layer.cornerRadius = 10
         txtViewNewContent.layer.borderWidth = 1.0
         txtViewNewContent.layer.borderColor = UIColor(named: "ThemeColor")?.cgColor
